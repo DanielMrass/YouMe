@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+ <TextView
+             android:id="@+id/reg_label_welcome"
+             android:text="@string/login_message"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             />  
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_name"
+        android:text="@string/reg_name_label"
+        />
+    <EditText 
+        android:id="@+id/reg_box_name"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_name_hint"
+    	android:singleLine="true"
+    	android:layout_span="2"
+    	android:layout_weight="0.75" 
+    	/>
+    </TableRow>
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_email"
+        android:text="@string/reg_email_label" 
+        />
+    <EditText 
+        android:id="@+id/reg_box_email"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_email_hint"
+    	android:singleLine="true" 
+    	android:inputType="textEmailAddress"
+    	android:layout_span="2"
+    	android:layout_weight="0.75"
+    	/>
+    </TableRow>
+    
+        <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/reg_label_nickname"
+            android:text="@string/reg_nickname_label" />
+
+        <EditText
+            android:id="@+id/reg_box_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/reg_box_nickname_hint"
+            android:singleLine="true"
+            android:layout_weight="0.75" 
+            />
+    </TableRow>
+    
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_birthday"
+        android:text="@string/reg_birthday_label" 
+        />
+    <EditText 
+        android:id="@+id/reg_box_birthday"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_birthday_hint"
+    	android:singleLine="true" 
+    	android:onClick="showDatePicker"
+    	android:layout_span="2"
+    	android:layout_weight="0.75"
+    	/>
+    </TableRow>
+    
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_country"
+        android:text="@string/reg_country_label" 
+        />
+    <Spinner
+        android:id="@+id/reg_box_country"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_span="2"
+    	android:layout_weight="0.75"
+    	/>
+    </TableRow>
+    
+    <!--Muss je nach Country noch angepasst werden  -->
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_city"
+        android:text="@string/reg_city_label" 
+        />
+    <EditText 
+        android:id="@+id/reg_box_plz"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_plz_hint"
+    	android:singleLine="true" 
+    	android:layout_weight="0.25"
+    	/>
+    <EditText 
+        android:id="@+id/reg_box_city"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_city_hint"
+    	android:singleLine="true" 
+    	android:layout_weight="0.75"
+    	/>
+    </TableRow>
+    
+    <TableRow 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+    <TextView
+        android:id="@+id/reg_label_symptoms"
+        android:text="@string/reg_symptoms_label" 
+        />
+    <EditText 
+        android:id="@+id/reg_box_symptoms"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/reg_box_symptoms_hint"
+    	android:singleLine="true" 
+    	android:layout_span="2"
+    	android:layout_weight="0.75"
+    	/>
+    </TableRow>
+    
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/reg_label_medicine"
+            android:text="@string/reg_medicine_label" />
+
+        <EditText
+            android:id="@+id/reg_box_medicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/reg_box_medicine_hint"
+            android:singleLine="true"
+            android:layout_span="2" 
+            android:layout_weight="0.75"
+            />
+    </TableRow>
+    
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+         <CheckBox
+             android:id="@+id/reg_cbox_toc"
+             android:layout_gravity="right"             
+             android:layout_span="1"
+             />   
+         <TextView
+             android:id="@+id/reg_label_cbox"
+             android:text="@string/reg_toc_label"
+             android:layout_span="2"
+             android:layout_weight="0.75"   
+             />
+    </TableRow>
+    
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+         <Button
+             android:id="@+id/reg_button_reg"
+             android:text="@string/reg_reg_label"
+             android:layout_span="3"
+             android:layout_weight="1"
+             />   
+    </TableRow>
+</TableLayout>
+</ScrollView>
+</LinearLayout>
