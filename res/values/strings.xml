@@ -4,5 +4,11 @@
     <string name="app_name">YouApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="login_message">Hi and welcome to the YouMeIBD matching platform where you can find people that are like you, by simply answering and posting questions. \nHave fun!</string>
+    <string name="login_mail_hint">E-Mail</string>
+    <string name="login_pass_hint">Password</string>
+    <string name="login_button_text">Log in with Facebook</string>
+    <string name="login_mail_label">User</string>
+    <string name="login_password_label">Password</string>
 
 </resources>
