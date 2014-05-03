@@ -59,4 +59,12 @@
     android:layout_below="@id/login_password"
     android:layout_alignParentLeft="true"
     />
+<Button 
+    android:id="@+id/login_regbutton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/login_regbutton_text"
+    android:layout_below="@id/login_button"
+    android:layout_alignParentLeft="true"
+    />
 </RelativeLayout>

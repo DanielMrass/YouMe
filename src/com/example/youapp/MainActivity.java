@@ -1,6 +1,7 @@
 package com.example.youapp;
 
 import com.example.UIFragments.LoginScreenFragment;
+import com.example.UIFragments.RegistrationScreenFragment;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -20,10 +21,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		//LoginScreenFragment
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new LoginScreenFragment()).commit();
 		}
+		
+		//RegistrationScreenFragment
+//		if (savedInstanceState == null) {
+//			getFragmentManager().beginTransaction()
+//					.add(R.id.container, new RegistrationScreenFragment()).commit();
+//		}
 	}
 
 	@Override

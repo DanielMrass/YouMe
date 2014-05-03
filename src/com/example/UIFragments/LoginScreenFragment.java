@@ -17,6 +17,7 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 	private Button loginButton;
 	private EditText mailaddy;
 	private EditText password;
+	private Button loginregButton;
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -26,14 +27,21 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 		password = (EditText) rootView.findViewById(R.id.login_password);
 		loginButton = (Button) rootView.findViewById(R.id.login_button);
 		loginButton.setOnClickListener(this);
+		
+		loginregButton = (Button) rootView.findViewById(R.id.login_regbutton);
+		loginregButton.setOnClickListener(this);
 		return rootView;
 	}
 
 	@Override
 	public void onClick(View v) {
-		if(v == loginButton){
-			String text = "Mailaddy: " + mailaddy.getText() + "\nPassword: " + password.getText();
-			Toast.makeText(getActivity(), text, Toast.LENGTH_LONG).show();
+		switch(v.getId()){
+		case R.id.login_button:
+			Toast.makeText(getActivity(), "Login", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.login_regbutton:
+			getFragmentManager().beginTransaction().add(R.id.container, new RegistrationScreenFragment()).addToBackStack("login").commit();
+			break;
 		}
 	}
 }

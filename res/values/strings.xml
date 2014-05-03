@@ -10,5 +10,36 @@
     <string name="login_button_text">Log in with Facebook</string>
     <string name="login_mail_label">User</string>
     <string name="login_password_label">Password</string>
-
+    <string name="reg_name_label">Name*</string>
+    <string name="reg_box_name_hint">Name</string>
+	<string name="reg_email_label">E-Mail*</string>
+	<string name="reg_box_email_hint">E-Mail</string>
+	<string name="reg_birthday_label">Birthday*</string>
+	<string name="reg_box_birthday_hint">mm/dd/yyyy</string>
+	<string name="reg_country_label">Country*</string>
+	<string name="reg_city_label">City</string>
+	<string name="reg_box_city_hint">City</string>
+	<string name="reg_box_plz_hint">PLZ</string>
+	
+	<string-array name="reg_countries_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+	
+	<string name="reg_symptoms_label">Symptome</string>
+	<string name="reg_box_symptoms_hint">Click "+" to add</string>
+	<string name="reg_medicine_label">Medicine</string>
+	<string name="reg_box_medicine_hint">Click "+" to add</string>
+	<string name="reg_nickname_label">Nickname</string>
+	<string name="reg_box_nickname_hint">Nickname</string>
+	<string name="reg_toc_label">I have read and agree with the <a href="https://www.youtube.com/watch?v=jxVcgDMBU94">terms and conditions</a></string>
+	<string name="reg_reg_label">Register</string>
+	<string name="login_regbutton_text">Register via facebook</string>	
+	
 </resources>
