@@ -3,6 +3,7 @@ package com.example.UIFragments;
 import com.example.youapp.R;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 			Toast.makeText(getActivity(), "Login", Toast.LENGTH_LONG).show();
 			break;
 		case R.id.login_regbutton:
-			getFragmentManager().beginTransaction().add(R.id.container, new RegistrationScreenFragment()).addToBackStack("login").commit();
+			getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationScreenFragment()).addToBackStack(null).commit();
 			break;
 		}
 	}

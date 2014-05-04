@@ -22,14 +22,16 @@
 	<string name="reg_box_plz_hint">PLZ</string>
 	
 	<string-array name="reg_countries_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Germany</item>
+        <item>Switzerland</item>
+        <item>United States</item>
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>Portugal</item>
+        <item>Poland</item>
+        <item>Denmark</item>
+        <item>Norway</item>
+        <item>Finland</item>
     </string-array>
 	
 	<string name="reg_symptoms_label">Symptome</string>

@@ -1,9 +1,12 @@
 package com.example.UIFragments;
 
+import java.util.List;
+
 import com.example.youapp.R;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegistrationScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener {
@@ -29,6 +33,8 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 	private View city_text_box;
 	private View plz_text_box;
 	
+	private List<String> symptoms;
+	private List<String> medicines;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -39,11 +45,14 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 		email_text_box = rootView.findViewById(R.id.reg_box_email);
 		nickname_text_box = rootView.findViewById(R.id.reg_box_nickname);
 		birthday_text_box = rootView.findViewById(R.id.reg_box_birthday);
+		birthday_text_box.setOnClickListener(this);
 		country_text_box = rootView.findViewById(R.id.reg_box_country);
 		city_text_box = rootView.findViewById(R.id.reg_box_city);
 		plz_text_box = rootView.findViewById(R.id.reg_box_plz);
 		
 		//TODO Symptome + Medizin noch in XML richtig definieren
+		//einfach an eine ViewGroup(LinearLayout) vertical ne View als Child dranpacken für jedes Symptom
+		//einfach Werte als Liste nebenan tracken
 		
 		spinner = (Spinner) rootView.findViewById(R.id.reg_box_country);
 		// Create an ArrayAdapter using the string array and a default spinner layout
@@ -61,6 +70,9 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 		
 		reg_cbox = (CheckBox) rootView.findViewById(R.id.reg_cbox_toc);
 		reg_cbox.setOnClickListener(this);
+		
+		TextView toc_labelText = (TextView) rootView.findViewById(R.id.reg_label_cbox);
+		toc_labelText.setMovementMethod(LinkMovementMethod.getInstance());
 		
 		return rootView;
 	}
@@ -97,6 +109,14 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
             	reg_button.setEnabled(false);
             }
 			break;
+		case R.id.reg_box_birthday:
+			showDatePicker();
+			break;
+			
+		//case Button zurück als View oder beim Registrieren abschicken
+			//legt das oberste Fragement(wo man grade ist) weg und geht zum anderen zurück
+			// getFragmentManager().popBackStack();
+			//break;
 		}
 	}
 }
