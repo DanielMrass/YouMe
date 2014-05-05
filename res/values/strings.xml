@@ -46,4 +46,13 @@
 	<string name="profile_toggle_profile_text">Profile</string>
 	<string name="profile_toggle_soulmate_text">Soulmates</string>
 	<string name="reg_profile_label">Profile</string>
+	<string name="profcontent_label_text">How do you feel?</string>
+	<string name="profcontent_feelbox_hint">Post your mood here</string>
+	<string name="profcontent_button_submit">submit</string>
+	<string name="profcontent_edit_label">Edit your profile</string>
+	<string name="footer_pp_label"><a href="https://app.dev.galaxyadvisors.com/YouApp/home/termsofuse.html">privacy policy</a></string>
+	<string name="footer_about_label"><a href="https://app.dev.galaxyadvisors.com/YouApp/home/about.html">about</a></string>
+	<string name="footer_help_label"><a href="http://improvecarenowblog.org/2012/12/07/youmeibd/">help</a></string>
+	<string name="soulmate_hello_label">Search for Soulmates</string>
+	
 </resources>

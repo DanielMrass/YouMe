@@ -28,49 +28,62 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090022;
+        public static final int action_settings=0x7f09002c;
         public static final int container=0x7f090000;
-        public static final int content_placeholder=0x7f090002;
-        public static final int login_button=0x7f09001d;
-        public static final int login_mail=0x7f09001a;
-        public static final int login_mail_label=0x7f090019;
-        public static final int login_password=0x7f09001c;
-        public static final int login_password_label=0x7f09001b;
-        public static final int login_regbutton=0x7f09001e;
-        public static final int menu_placeholder=0x7f090001;
-        public static final int profile_toggle_profile=0x7f090020;
-        public static final int profile_toggle_soulmate=0x7f090021;
-        public static final int reg_box_birthday=0x7f09000b;
-        public static final int reg_box_city=0x7f090010;
-        public static final int reg_box_country=0x7f09000d;
-        public static final int reg_box_email=0x7f090007;
-        public static final int reg_box_medicine=0x7f090014;
-        public static final int reg_box_name=0x7f090005;
-        public static final int reg_box_nickname=0x7f090009;
-        public static final int reg_box_plz=0x7f09000f;
-        public static final int reg_box_symptoms=0x7f090012;
-        public static final int reg_button_profile=0x7f09001f;
-        public static final int reg_button_reg=0x7f090017;
-        public static final int reg_cbox_toc=0x7f090015;
-        public static final int reg_label_birthday=0x7f09000a;
-        public static final int reg_label_cbox=0x7f090016;
-        public static final int reg_label_city=0x7f09000e;
-        public static final int reg_label_country=0x7f09000c;
-        public static final int reg_label_email=0x7f090006;
-        public static final int reg_label_medicine=0x7f090013;
-        public static final int reg_label_name=0x7f090004;
-        public static final int reg_label_nickname=0x7f090008;
-        public static final int reg_label_symptoms=0x7f090011;
-        public static final int reg_label_welcome=0x7f090003;
-        public static final int welcome=0x7f090018;
+        public static final int content_placeholder=0x7f09000a;
+        public static final int footer_about=0x7f090002;
+        public static final int footer_help=0x7f090003;
+        public static final int footer_placeholder=0x7f09000b;
+        public static final int footer_privacy_policy=0x7f090001;
+        public static final int login_button=0x7f090027;
+        public static final int login_mail=0x7f090024;
+        public static final int login_mail_label=0x7f090023;
+        public static final int login_password=0x7f090026;
+        public static final int login_password_label=0x7f090025;
+        public static final int login_regbutton=0x7f090028;
+        public static final int menu_placeholder=0x7f090009;
+        public static final int profcontent_button_submit=0x7f090007;
+        public static final int profcontent_edit_heading=0x7f090008;
+        public static final int profcontent_feel=0x7f090005;
+        public static final int profcontent_feelbox=0x7f090006;
+        public static final int profcontent_hello=0x7f090004;
+        public static final int profile_toggle_profile=0x7f09002a;
+        public static final int profile_toggle_soulmate=0x7f09002b;
+        public static final int reg_box_birthday=0x7f090014;
+        public static final int reg_box_city=0x7f090019;
+        public static final int reg_box_country=0x7f090016;
+        public static final int reg_box_email=0x7f090010;
+        public static final int reg_box_medicine=0x7f09001d;
+        public static final int reg_box_name=0x7f09000e;
+        public static final int reg_box_nickname=0x7f090012;
+        public static final int reg_box_plz=0x7f090018;
+        public static final int reg_box_symptoms=0x7f09001b;
+        public static final int reg_button_profile=0x7f090029;
+        public static final int reg_button_reg=0x7f090020;
+        public static final int reg_cbox_toc=0x7f09001e;
+        public static final int reg_label_birthday=0x7f090013;
+        public static final int reg_label_cbox=0x7f09001f;
+        public static final int reg_label_city=0x7f090017;
+        public static final int reg_label_country=0x7f090015;
+        public static final int reg_label_email=0x7f09000f;
+        public static final int reg_label_medicine=0x7f09001c;
+        public static final int reg_label_name=0x7f09000d;
+        public static final int reg_label_nickname=0x7f090011;
+        public static final int reg_label_symptoms=0x7f09001a;
+        public static final int reg_label_welcome=0x7f09000c;
+        public static final int soulmate_hello=0x7f090021;
+        public static final int welcome=0x7f090022;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int f_profile_soulmate=0x7f030001;
-        public static final int f_registration=0x7f030002;
-        public static final int fragment_login=0x7f030003;
-        public static final int fragment_main=0x7f030004;
-        public static final int profile_soulmate_menu_fragment=0x7f030005;
+        public static final int f_footer_menu=0x7f030001;
+        public static final int f_profile_content=0x7f030002;
+        public static final int f_profile_soulmate=0x7f030003;
+        public static final int f_registration=0x7f030004;
+        public static final int f_soulmate_content=0x7f030005;
+        public static final int fragment_login=0x7f030006;
+        public static final int fragment_main=0x7f030007;
+        public static final int profile_soulmate_menu_fragment=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -78,6 +91,9 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
+        public static final int footer_about_label=0x7f050024;
+        public static final int footer_help_label=0x7f050025;
+        public static final int footer_pp_label=0x7f050023;
         public static final int hello_world=0x7f050001;
         public static final int login_button_text=0x7f050006;
         public static final int login_mail_hint=0x7f050004;
@@ -86,6 +102,10 @@ public final class R {
         public static final int login_pass_hint=0x7f050005;
         public static final int login_password_label=0x7f050008;
         public static final int login_regbutton_text=0x7f05001b;
+        public static final int profcontent_button_submit=0x7f050021;
+        public static final int profcontent_edit_label=0x7f050022;
+        public static final int profcontent_feelbox_hint=0x7f050020;
+        public static final int profcontent_label_text=0x7f05001f;
         public static final int profile_toggle_profile_text=0x7f05001c;
         public static final int profile_toggle_soulmate_text=0x7f05001d;
         public static final int reg_birthday_label=0x7f05000d;
@@ -107,6 +127,7 @@ public final class R {
         public static final int reg_reg_label=0x7f05001a;
         public static final int reg_symptoms_label=0x7f050013;
         public static final int reg_toc_label=0x7f050019;
+        public static final int soulmate_hello_label=0x7f050026;
     }
     public static final class style {
         /** 

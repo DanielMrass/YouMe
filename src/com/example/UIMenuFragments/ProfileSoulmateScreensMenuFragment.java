@@ -1,5 +1,7 @@
 package com.example.UIMenuFragments;
 
+import com.example.UIFragments.ProfileContentScreenFragment;
+import com.example.UIFragments.SoulmateContentScreenFragment;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -40,8 +42,9 @@ public class ProfileSoulmateScreensMenuFragment extends Fragment implements OnCh
 				soulmates.setChecked(false);
 				profile.setClickable(false);
 				soulmates.setClickable(true);
+				//TODO Fragment nachladen
+				getFragmentManager().beginTransaction().replace(R.id.content_placeholder, new ProfileContentScreenFragment()).commit();
 			}
-			//TODO Fragment nachladen
 			break;
 		case R.id.profile_toggle_soulmate:
 			Toast.makeText(getActivity(), "Soulmate: " + state, Toast.LENGTH_SHORT).show();
@@ -49,8 +52,9 @@ public class ProfileSoulmateScreensMenuFragment extends Fragment implements OnCh
 				profile.setChecked(false);
 				profile.setClickable(true);
 				soulmates.setClickable(false);
+				//TODO Fragment nachladen
+				getFragmentManager().beginTransaction().replace(R.id.content_placeholder, new SoulmateContentScreenFragment()).commit();
 			}
-			//TODO Fragment nachladen
 			break;
 		}
 	}

@@ -17,7 +17,15 @@
         android:id ="@+id/content_placeholder"
         android:layout_width = "match_parent"
         android:layout_height = "0dip"
-        android:layout_weight = "0.9"
+        android:layout_weight = "0.85"
+        android:orientation="vertical"
+        ></LinearLayout>
+    
+    <LinearLayout
+        android:id ="@+id/footer_placeholder"
+        android:layout_width = "match_parent"
+        android:layout_height = "0dip"
+        android:layout_weight = "0.05"
         android:orientation="vertical"
         ></LinearLayout>
 </LinearLayout>

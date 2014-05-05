@@ -1,5 +1,6 @@
 package com.example.UIFragments;
 
+import com.example.UIMenuFragments.FooterFragment;
 import com.example.UIMenuFragments.ProfileSoulmateScreensMenuFragment;
 import com.example.youapp.R;
 
@@ -16,6 +17,9 @@ public class ProfileSoulmatesScreenFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.f_profile_soulmate, container,
 				false);
 		getFragmentManager().beginTransaction().replace(R.id.menu_placeholder, new ProfileSoulmateScreensMenuFragment()).commit();
+		getFragmentManager().beginTransaction().replace(R.id.content_placeholder, new ProfileContentScreenFragment()).commit();
+		getFragmentManager().beginTransaction().replace(R.id.footer_placeholder, new FooterFragment()).commit();
+		
 		return rootView;
 	}
 }

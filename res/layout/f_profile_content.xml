@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/profcontent_hello"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+        />
+	<TextView
+	    android:id="@+id/profcontent_feel"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/profcontent_label_text"
+	    />
+	<EditText
+	    android:id="@+id/profcontent_feelbox"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:hint="@string/profcontent_feelbox_hint"
+	    />
+	<Button
+	    android:id="@+id/profcontent_button_submit"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/profcontent_button_submit"
+    	/>
+	<TextView
+	   	android:id="@+id/profcontent_edit_heading"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/profcontent_edit_label"   
+	    />	
+	<!-- TODO defin the edit section -->
+</LinearLayout>
