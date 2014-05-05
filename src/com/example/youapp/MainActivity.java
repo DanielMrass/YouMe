@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 		//LoginScreenFragment
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
-					.replace(R.id.container, new LoginScreenFragment()).addToBackStack(null).commit();
+					.replace(R.id.container, new LoginScreenFragment()).addToBackStack("login").commit();
 		}
 		
 		//RegistrationScreenFragment

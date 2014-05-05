@@ -19,6 +19,7 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 	private EditText mailaddy;
 	private EditText password;
 	private Button loginregButton;
+	private Button profileButton;
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -29,8 +30,13 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 		loginButton = (Button) rootView.findViewById(R.id.login_button);
 		loginButton.setOnClickListener(this);
 		
+		
+		//Buttons zu Testzwecken eingefügt 
 		loginregButton = (Button) rootView.findViewById(R.id.login_regbutton);
 		loginregButton.setOnClickListener(this);
+		
+		profileButton = (Button) rootView.findViewById(R.id.reg_button_profile);
+		profileButton.setOnClickListener(this);
 		return rootView;
 	}
 
@@ -41,7 +47,10 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 			Toast.makeText(getActivity(), "Login", Toast.LENGTH_LONG).show();
 			break;
 		case R.id.login_regbutton:
-			getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationScreenFragment()).addToBackStack(null).commit();
+			getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationScreenFragment()).addToBackStack("registration").commit();
+			break;
+		case R.id.reg_button_profile:
+			getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesScreenFragment()).addToBackStack("profile").commit();
 			break;
 		}
 	}

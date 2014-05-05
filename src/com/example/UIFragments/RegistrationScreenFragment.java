@@ -16,6 +16,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,13 +26,12 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 	private View rootView;
 	private Button reg_button;
 	private CheckBox reg_cbox;
-	private View name_text_box;
-	private View email_text_box;
-	private View nickname_text_box;
-	private View birthday_text_box;
-	private View country_text_box;
-	private View city_text_box;
-	private View plz_text_box;
+	private EditText name_text_box;
+	private EditText email_text_box;
+	private EditText nickname_text_box;
+	private EditText birthday_text_box;
+	private EditText city_text_box;
+	private EditText plz_text_box;
 	
 	private List<String> symptoms;
 	private List<String> medicines;
@@ -41,14 +41,13 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 		rootView = inflater.inflate(R.layout.f_registration, container,
 				false);
 	
-		name_text_box = rootView.findViewById(R.id.reg_box_name); 
-		email_text_box = rootView.findViewById(R.id.reg_box_email);
-		nickname_text_box = rootView.findViewById(R.id.reg_box_nickname);
-		birthday_text_box = rootView.findViewById(R.id.reg_box_birthday);
+		name_text_box = (EditText) rootView.findViewById(R.id.reg_box_name); 
+		email_text_box = (EditText) rootView.findViewById(R.id.reg_box_email);
+		nickname_text_box = (EditText) rootView.findViewById(R.id.reg_box_nickname);
+		birthday_text_box = (EditText) rootView.findViewById(R.id.reg_box_birthday);
 		birthday_text_box.setOnClickListener(this);
-		country_text_box = rootView.findViewById(R.id.reg_box_country);
-		city_text_box = rootView.findViewById(R.id.reg_box_city);
-		plz_text_box = rootView.findViewById(R.id.reg_box_plz);
+		city_text_box = (EditText) rootView.findViewById(R.id.reg_box_city);
+		plz_text_box = (EditText) rootView.findViewById(R.id.reg_box_plz);
 		
 		//TODO Symptome + Medizin noch in XML richtig definieren
 		//einfach an eine ViewGroup(LinearLayout) vertical ne View als Child dranpacken für jedes Symptom

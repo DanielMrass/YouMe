@@ -43,5 +43,7 @@
 	<string name="reg_toc_label">I have read and agree with the <a href="https://www.youtube.com/watch?v=jxVcgDMBU94">terms and conditions</a></string>
 	<string name="reg_reg_label">Register</string>
 	<string name="login_regbutton_text">Register via facebook</string>	
-	
+	<string name="profile_toggle_profile_text">Profile</string>
+	<string name="profile_toggle_soulmate_text">Soulmates</string>
+	<string name="reg_profile_label">Profile</string>
 </resources>
