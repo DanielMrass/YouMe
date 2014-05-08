@@ -34,12 +34,13 @@ public final class R {
         public static final int arrow_cbox_down_48=0x7f020002;
         public static final int arrow_cbox_up=0x7f020003;
         public static final int arrow_cbox_up_48=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int logo_komplett=0x7f020006;
-        public static final int logo_zeichen=0x7f020007;
-        public static final int message_icon=0x7f020008;
-        public static final int myowncheckbox=0x7f020009;
-        public static final int question_answer_icon=0x7f02000a;
+        public static final int edit_pen=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int logo_komplett=0x7f020007;
+        public static final int logo_zeichen=0x7f020008;
+        public static final int message_icon=0x7f020009;
+        public static final int myowncheckbox=0x7f02000a;
+        public static final int question_answer_icon=0x7f02000b;
     }
     public static final class id {
         public static final int action_settings=0x7f070038;
@@ -57,7 +58,6 @@ public final class R {
         public static final int login_password_label=0x7f070031;
         public static final int login_regbutton=0x7f070034;
         public static final int menu_placeholder=0x7f070015;
-        public static final int my_button_1=0x7f070001;
         public static final int my_time_picker_1=0x7f070002;
         public static final int profcontent_button_submit=0x7f07000a;
         public static final int profcontent_edit_heading=0x7f07000b;
@@ -71,6 +71,7 @@ public final class R {
         public static final int profcontent_medication_button=0x7f070013;
         public static final int profcontent_medication_content=0x7f070014;
         public static final int profcontent_medication_heading=0x7f070012;
+        public static final int profcontent_profile_edit_button=0x7f070001;
         public static final int profcontent_symptoms_button=0x7f070010;
         public static final int profcontent_symptoms_content=0x7f070011;
         public static final int profcontent_symptoms_heading=0x7f07000f;

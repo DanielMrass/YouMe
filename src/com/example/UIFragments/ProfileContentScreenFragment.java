@@ -2,7 +2,7 @@ package com.example.UIFragments;
 
 import java.util.Vector;
 
-import com.example.LayoutFactories.ProfileLayoutFactory;
+import com.example.LayoutFactories.ProfileSoulmateLayoutFactory;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -26,7 +26,7 @@ public class ProfileContentScreenFragment extends Fragment implements OnClickLis
 		
 		getActivity().getActionBar().setTitle("Your Profile");
 		
-		ProfileLayoutFactory plf = new ProfileLayoutFactory(getActivity()); 
+		ProfileSoulmateLayoutFactory plf = new ProfileSoulmateLayoutFactory(getActivity()); 
 		View rootView = inflater.inflate(R.layout.f_profile_content, container, false);
 		
 		CheckBox profcontentInfoButton = (CheckBox) rootView.findViewById(R.id.profcontent_info_button);
