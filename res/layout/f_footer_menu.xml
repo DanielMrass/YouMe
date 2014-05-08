@@ -5,29 +5,29 @@
     android:orientation="horizontal" >
     
 	<TextView
+	    style="@style/myOwnTextFieldStyle"
 	    android:id="@+id/footer_privacy_policy"
 		android:layout_width="0dip"
     	android:layout_height="wrap_content"
     	android:layout_weight="0.33"
     	android:text="@string/footer_pp_label"
-    	android:gravity="center"
 	    />
 	
 	<TextView
+	    style="@style/myOwnTextFieldStyle"
 	    android:id="@+id/footer_about"
 		android:layout_width="0dip"
     	android:layout_height="wrap_content"
     	android:layout_weight="0.33" 
     	android:text="@string/footer_about_label"
-    	android:gravity="center"
 	    />
 	
 	<TextView
+	    style="@style/myOwnTextFieldStyle"
 	    android:id="@+id/footer_help"
 		android:layout_width="0dip"
     	android:layout_height="wrap_content"
     	android:layout_weight="0.33" 
     	android:text="@string/footer_help_label"
-    	android:gravity="center"
 	    />
 </LinearLayout>

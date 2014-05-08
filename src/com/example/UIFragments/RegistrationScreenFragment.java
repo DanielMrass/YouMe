@@ -38,6 +38,9 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		getActivity().getActionBar().setTitle("Registration");
+		
 		rootView = inflater.inflate(R.layout.f_registration, container,
 				false);
 	

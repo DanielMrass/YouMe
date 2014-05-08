@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 public class SoulmateContentScreenFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		getActivity().getActionBar().setTitle("Soulmates");
+		
 		View rootView = inflater.inflate(R.layout.f_soulmate_content, container,
 				false);
 		return rootView;

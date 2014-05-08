@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -23,6 +25,9 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
+		getActivity().getActionBar().setTitle("YouMeIBD");
+		
 		View rootView = inflater.inflate(R.layout.fragment_login, container,
 				false);
 		mailaddy = (EditText) rootView.findViewById(R.id.login_mail);
@@ -38,6 +43,11 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 		profileButton = (Button) rootView.findViewById(R.id.reg_button_profile);
 		profileButton.setOnClickListener(this);
 		return rootView;
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
 	}
 
 	@Override
