@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="myOwnLinearLayoutStyle">
+        <item name="android:background">@color/special_green</item>
+        <item name= "android:textColorLink">@color/special_white</item>
+    </style>
+</resources>

@@ -36,14 +36,16 @@
 	<!-- TODO defin the edit section -->
 <!--content to hide/show -->
 	<LinearLayout
+	    android:id="@+id/profcontent_info_layout"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"	     
 	    >
 	    <LinearLayout
+	        style="@style/myOwnLinearLayoutStyle"
 	        android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="horizontal" 
+			android:orientation="horizontal"
 	        >
 	        <TextView 
 	    		android:layout_width="0dip"
@@ -60,12 +62,7 @@
 	    		android:button="@drawable/myowncheckbox"
 	            />
 	    </LinearLayout>
-	    <TextView  
-     	android:id="@+id/profcontent_info_content"
-     	android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-		android:text="@string/profcontent_info_content"
-		/>
+
 	</LinearLayout>
 	
 	<LinearLayout
@@ -74,6 +71,7 @@
 		android:orientation="vertical"	     
 	    >
 	    <LinearLayout
+	        style="@style/myOwnLinearLayoutStyle"
 	        android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal" 
@@ -107,6 +105,7 @@
 		android:orientation="vertical"	     
 	    >
 	    <LinearLayout
+	        style="@style/myOwnLinearLayoutStyle"
 	        android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal" 
