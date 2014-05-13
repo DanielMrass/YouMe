@@ -1,8 +1,11 @@
 package com.example.UIFragments;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Vector;
 
-import com.example.LayoutFactories.ProfileSoulmateLayoutFactory;
+import com.example.Adapters.ProfileListAdapter;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -12,72 +15,59 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ProfileContentScreenFragment extends Fragment implements OnClickListener {
+public class ProfileContentScreenFragment extends Fragment  {
 	
-	private LinearLayout personalContent;
-	private TextView symptomsContent;
-	private TextView medicationContent;
+	private List<String> categories = new ArrayList<String>();
+	private HashMap<String, List<Object>> childData = new HashMap<String, List<Object>>();
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		
 		getActivity().getActionBar().setTitle("Your Profile");
-		
-		ProfileSoulmateLayoutFactory plf = new ProfileSoulmateLayoutFactory(getActivity()); 
 		View rootView = inflater.inflate(R.layout.f_profile_content, container, false);
 		
-		CheckBox profcontentInfoButton = (CheckBox) rootView.findViewById(R.id.profcontent_info_button);
-		profcontentInfoButton.setOnClickListener(this);
-		
-		personalContent = plf.getProfileContent(createDummyData());
-		LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.profcontent_info_layout);
-		layout.addView(personalContent);
-//		personalContent = rootView.findViewById(R.id.profcontent_info_content);
-//		personalContent.setVisibility(View.GONE);
-		
-		CheckBox profContentSymptomsButton = (CheckBox) rootView.findViewById(R.id.profcontent_symptoms_button);
-		profContentSymptomsButton.setOnClickListener(this);
-		symptomsContent = (TextView) rootView.findViewById(R.id.profcontent_symptoms_content);
-		symptomsContent.setVisibility(View.GONE);
-		
-		CheckBox profContentMedicationButton = (CheckBox) rootView.findViewById(R.id.profcontent_medication_button);
-		profContentMedicationButton.setOnClickListener(this);
-		medicationContent = (TextView) rootView.findViewById(R.id.profcontent_medication_content);
-		medicationContent.setVisibility(View.GONE);
+		ExpandableListView exlv = (ExpandableListView) rootView.findViewById(R.id.profile_exlist);
+		createDummyData();
+		ProfileListAdapter pla = new ProfileListAdapter(getActivity(), categories, childData);
+		exlv.setAdapter(pla);
 		return rootView;
 	}
 
-	private Vector<String> createDummyData() {
-		Vector<String> data = new Vector<String>();
-		data.add("Daniel Mraﬂ");
-		data.add("Alter: 25");
-		data.add("Ernststr. 91");
-		data.add("53757 Sankt Augustin");
-		data.add("Germany");
-		return data;
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch(v.getId()){
-		case R.id.profcontent_info_button:
-			personalContent.setVisibility( personalContent.isShown()
-                    ? View.GONE
-                    : View.VISIBLE );
-		break;
-		case R.id.profcontent_symptoms_button:
-			symptomsContent.setVisibility( symptomsContent.isShown()
-                    ? View.GONE
-                    : View.VISIBLE );
-			break;
-		case R.id.profcontent_medication_button:
-			medicationContent.setVisibility( medicationContent.isShown()
-                    ? View.GONE
-                    : View.VISIBLE );
-			break;
-		}
+	private void createDummyData() {
+		//add the Categories
+		categories.add("My Profile");
+		categories.add("Symptoms");
+		categories.add("Medication");
+		
+		
+		//create profile Information
+		List<Object> profiles = new ArrayList<Object>();
+		List<Object> profile = new ArrayList<Object>();
+		profile.add("Daniel Mraﬂ, Age: 25");
+		profile.add("Sankt Augustin, Germany");
+		profile.add("daniel.mrass@gmail.com (not visible)");
+		profiles.add(profile);
+		
+		//create symptoms iInformation
+		List<Object> symptom = new ArrayList<Object>();
+		symptom.add("smartness");
+		symptom.add("good look");
+		symptom.add("clear speech");
+		
+		
+		//create medication information
+		List<Object> medication = new ArrayList<Object>();
+		medication.add("Coffee");
+		medication.add("More Coffee");
+		medication.add("...");
+		
+		//add the categories and data to the map
+		childData.put(categories.get(0), profiles);
+		childData.put(categories.get(1), symptom);
+		childData.put(categories.get(2), medication);
 	}
 }

@@ -33,103 +33,11 @@
     	android:layout_height="wrap_content"
     	android:text="@string/profcontent_edit_label"   
 	    />	
-	<!-- TODO defin the edit section -->
-<!--content to hide/show -->
-	<LinearLayout
-	    android:id="@+id/profcontent_info_layout"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"	     
-	    >
-	    <LinearLayout
-	        style="@style/myOwnLinearLayoutStyle"
-	        android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal"
-	        >
-	        <TextView 
-	    		android:layout_width="0dip"
-	    		android:layout_weight="0.9"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_info_heading"
-				android:text="@string/profcontent_info_label"
-			/>
-	        <CheckBox
-	            android:layout_width="0dip"
-	            android:layout_weight="0.1"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_info_button"
-	    		android:button="@drawable/myowncheckbox"
-	            />
-	    </LinearLayout>
-
-	</LinearLayout>
+	    
+	<ExpandableListView
+	    android:id="@+id/profile_exlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+	    ></ExpandableListView>
 	
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"	     
-	    >
-	    <LinearLayout
-	        style="@style/myOwnLinearLayoutStyle"
-	        android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal" 
-	        >
-	        <TextView 
-	    		android:layout_width="0dip"
-	    		android:layout_weight="0.9"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_symptoms_heading"
-				android:text="@string/profcontent_symptoms_label"
-			/>
-	        <CheckBox
-	            android:layout_width="0dip"
-	            android:layout_weight="0.1"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_symptoms_button"
-	    		android:button="@drawable/myowncheckbox"
-	            />
-	    </LinearLayout>
-	    <TextView  
-     	android:id="@+id/profcontent_symptoms_content"
-     	android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-		android:text="@string/profcontent_symptoms_content"
-		/>
-	</LinearLayout>
-	
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"	     
-	    >
-	    <LinearLayout
-	        style="@style/myOwnLinearLayoutStyle"
-	        android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="horizontal" 
-	        >
-	        <TextView 
-	    		android:layout_width="0dip"
-	    		android:layout_weight="0.9"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_medication_heading"
-				android:text="@string/profcontent_medication_label"
-			/>
-	        <CheckBox
-	            android:layout_width="0dip"
-	            android:layout_weight="0.1"
-	    		android:layout_height="wrap_content"
-	    		android:id="@+id/profcontent_medication_button"
-	    		android:button="@drawable/myowncheckbox"
-	            />
-	    </LinearLayout>
-	    <TextView  
-     	android:id="@+id/profcontent_medication_content"
-     	android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-		android:text="@string/profcontent_medication_content"
-		/>
-	</LinearLayout>
 </LinearLayout>
