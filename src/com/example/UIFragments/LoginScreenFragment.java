@@ -22,6 +22,7 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 	private EditText password;
 	private Button loginregButton;
 	private Button profileButton;
+	private Button confButton;
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -42,6 +43,11 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 		
 		profileButton = (Button) rootView.findViewById(R.id.reg_button_profile);
 		profileButton.setOnClickListener(this);
+		
+		confButton = (Button) rootView.findViewById(R.id.conf_button_confirmation);
+		confButton.setOnClickListener(this);
+		
+		
 		return rootView;
 	}
 	
@@ -61,6 +67,9 @@ public class LoginScreenFragment extends Fragment implements OnClickListener {
 			break;
 		case R.id.reg_button_profile:
 			getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesScreenFragment()).addToBackStack("profile").commit();
+			break;
+		case R.id.conf_button_confirmation:
+			getFragmentManager().beginTransaction().replace(R.id.container, new ConfirmationFragment()).addToBackStack("confirmation").commit();
 			break;
 		}
 	}

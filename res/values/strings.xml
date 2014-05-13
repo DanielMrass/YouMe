@@ -64,4 +64,9 @@
 	<string name="question">Questions</string>
 	<string name="soulmate_find_label">Find</string>
 	<string name="soulmate_search_hint">Soulmate</string>
+	<string name="conf_thx4reg">Thank you for your registration!</string>
+	<string name="conf_plsConf">Please confirm your e-mail address.</string>
+	<string name="conf_b2login"><a href="https://www.youtube.com/watch?v=jxVcgDMBU94"> Back to Login </a></string>
+	<string name="conf_logoGross">Großes Logo</string>
+	<string name="conf_profile_label">Confirmation Screen</string>
 </resources>

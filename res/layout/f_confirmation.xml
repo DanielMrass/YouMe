@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/confirmation_thx4reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/conf_thx4reg"
+        />
+    
+    <TextView 
+        android:id="@+id/confirmation_confMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/conf_plsConf"
+        />
+    
+    <TextView 
+        android:id="@+id/confirmation_b2login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/conf_b2login"
+        />
+
+    <ImageView
+        android:id="@+id/confirmation_logo_gross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_gross" 
+        android:contentDescription="@string/conf_logoGross"/>
+
+</LinearLayout>

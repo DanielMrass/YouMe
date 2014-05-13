@@ -72,5 +72,12 @@
         android:layout_height="wrap_content"
         android:text="@string/reg_profile_label" 
         />
+    
+    <Button
+        android:id="@+id/conf_button_confirmation"
+        android:layout_width ="match_parent" 
+        android:layout_height="wrap_content"
+        android:text="@string/conf_profile_label" 
+        />
 
 </LinearLayout>
