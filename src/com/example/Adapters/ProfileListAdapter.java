@@ -51,6 +51,7 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView,
 			ViewGroup parent) {
 		Log.i("GROUP", ""+ groupPosition);
+		Log.i("CHILD", ""+childPosition);
 		switch(groupPosition){
 		//ProfileInfo
 		case 0:
@@ -59,6 +60,7 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 		//Symptoms 
 		case 1:
 			String symptom = (String) getChild(groupPosition, childPosition);
+			Log.i("Symptom", symptom);
 			return createSymptomsChild(convertView, symptom);
 		//Medication
 		case 2:
@@ -69,10 +71,10 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	}
 	
 	private View createMedicationChild(View convertView, String medication2) {
-		if(convertView == null){
+		//if(convertView == null){
 			LayoutInflater infalInflater = (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         	convertView = infalInflater.inflate(R.layout.profile_exlist_medication_child, null);
-		}
+		//}
 		
 		TextView medication = (TextView) convertView.findViewById(R.id.medication_exlist_name);
 		medication.setText(medication2);
@@ -80,10 +82,10 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	}
 
 	private View createSymptomsChild(View convertView, String symptom2) {
-		if(convertView == null){
+		//if(convertView == null){
 			LayoutInflater infalInflater = (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         	convertView = infalInflater.inflate(R.layout.profile_exlist_symptoms_child, null);
-		}
+		//}
 		
 		TextView symptom = (TextView) convertView.findViewById(R.id.symptoms_exlist_name);
 		symptom.setText(symptom2);
@@ -92,10 +94,10 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	}
 
 	private View createProfileChild(View convertView, List<Object> obj) {
-		if(convertView == null){
+		//if(convertView == null){
 			LayoutInflater infalInflater = (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         	convertView = infalInflater.inflate(R.layout.profile_exlist_info_child, null);
-		}
+		//}
 		
 		TextView name = (TextView) convertView.findViewById(R.id.profile_exlist_info_child_name);
 		name.setText((String)obj.get(0));
