@@ -73,6 +73,12 @@
 	<string name="qa_toggle_postquestion_text">Post Questions</string>
 	<string name="qa_toggle_answerquestion_text">Answer Questions</string>
 	<string name="answerquestions_message_label_text">Answer Questions</string>
-	<string name="postquestions_message_label_text">Post Questions</string>
+	<string name="postquestions_message_label_text">Post Question</string>
+	<string name="postquestions_etext_question_hint">Question</string>
+	<string name="postquestions_option_label_text">Options</string>
+	<string name="postquestions_etext_option_hint">Option</string>
+	<string name="postquestions_moreoptions_button_text">Add Option</string>
+	<string name="postquestions_ok_button_text">OK</string>
+	<string name="postquestions_reset_button_text">Reset</string>
 	
 </resources>

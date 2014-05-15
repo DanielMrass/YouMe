@@ -7,7 +7,7 @@
 	 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.9"
+        android:layout_weight="0.15"
         android:orientation="vertical" 
         >
 	<TextView
@@ -15,6 +15,63 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:text="@string/postquestions_message_label_text"
+	    />
+	
+	<EditText
+	    android:id="@+id/postquestions_etext_question"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content" 
+	    android:hint="@string/postquestions_etext_question_hint"
+	    />
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/postquestions_option_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="0.6"
+	    android:orientation="vertical" 
+	    >
+	<TextView
+	    android:id="@+id/postquestions_options_label"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/postquestions_option_label_text"
+	    />
+	
+	<ListView
+	    android:id="@+id/postquestions_options_listview"
+	    android:layout_width="match_parent" 
+	    android:layout_height="wrap_content"
+	    ></ListView>
+	
+	<Button
+	    android:id="@+id/postquestions_moreoptions_button"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/postquestions_moreoptions_button_text"
+	    />
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="0.15"
+	    android:orientation="horizontal"  
+	    >
+	<Button
+	    android:id="@+id/postquestions_ok_button"
+	    android:layout_width="0dip"
+	    android:layout_weight="0.5"
+	    android:layout_height="wrap_content"
+	    android:text="@string/postquestions_ok_button_text"
+	    />
+	<Button
+	    android:id="@+id/postquestions_reset_button"
+	    android:layout_width="0dip"
+	    android:layout_weight="0.5"
+	    android:layout_height="wrap_content"
+	    android:text="@string/postquestions_reset_button_text"
 	    />
 	</LinearLayout>
 </LinearLayout>

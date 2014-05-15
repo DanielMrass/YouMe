@@ -46,9 +46,9 @@ public final class R {
         public static final int question_answer_icon=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f070046;
+        public static final int action_settings=0x7f07004e;
         public static final int answerquestions_message_label=0x7f070004;
-        public static final int chat_menu_icon=0x7f070048;
+        public static final int chat_menu_icon=0x7f070050;
         public static final int chat_message_label=0x7f070005;
         public static final int confirmation_b2login=0x7f070009;
         public static final int confirmation_confMail=0x7f070008;
@@ -62,13 +62,21 @@ public final class R {
         public static final int footer_placeholder=0x7f070030;
         public static final int footer_privacy_policy=0x7f07000b;
         public static final int login_button=0x7f070032;
-        public static final int medication_exlist_button=0x7f070039;
-        public static final int medication_exlist_name=0x7f070038;
+        public static final int medication_exlist_button=0x7f070041;
+        public static final int medication_exlist_name=0x7f070040;
         public static final int menu_placeholder=0x7f07002e;
         public static final int my_time_picker_1=0x7f070002;
+        public static final int postquestion_option_text=0x7f07003b;
+        public static final int postquestions_etext_question=0x7f070034;
         public static final int postquestions_message_label=0x7f070033;
+        public static final int postquestions_moreoptions_button=0x7f070038;
+        public static final int postquestions_ok_button=0x7f070039;
+        public static final int postquestions_option_layout=0x7f070035;
+        public static final int postquestions_options_label=0x7f070036;
+        public static final int postquestions_options_listview=0x7f070037;
+        public static final int postquestions_reset_button=0x7f07003a;
         public static final int profcontent_button_submit=0x7f070011;
-        public static final int profcontent_category_text=0x7f07003a;
+        public static final int profcontent_category_text=0x7f070042;
         public static final int profcontent_edit_heading=0x7f070012;
         public static final int profcontent_expandable_info=0x7f070000;
         public static final int profcontent_feel=0x7f07000f;
@@ -76,16 +84,16 @@ public final class R {
         public static final int profcontent_hello=0x7f07000e;
         public static final int profcontent_profile_edit_button=0x7f070001;
         public static final int profile_exlist=0x7f070013;
-        public static final int profile_exlist_info_child_button=0x7f070037;
-        public static final int profile_exlist_info_child_land=0x7f070035;
-        public static final int profile_exlist_info_child_mail=0x7f070036;
-        public static final int profile_exlist_info_child_name=0x7f070034;
-        public static final int profile_soulmate_menu_icon=0x7f070047;
-        public static final int profile_toggle_profile=0x7f07003d;
-        public static final int profile_toggle_soulmate=0x7f07003e;
-        public static final int qa_toggle_answerquestion=0x7f07003f;
-        public static final int qa_toggle_postquestion=0x7f070040;
-        public static final int question_answer_menu_icon=0x7f070049;
+        public static final int profile_exlist_info_child_button=0x7f07003f;
+        public static final int profile_exlist_info_child_land=0x7f07003d;
+        public static final int profile_exlist_info_child_mail=0x7f07003e;
+        public static final int profile_exlist_info_child_name=0x7f07003c;
+        public static final int profile_soulmate_menu_icon=0x7f07004f;
+        public static final int profile_toggle_profile=0x7f070045;
+        public static final int profile_toggle_soulmate=0x7f070046;
+        public static final int qa_toggle_answerquestion=0x7f070047;
+        public static final int qa_toggle_postquestion=0x7f070048;
+        public static final int question_answer_menu_icon=0x7f070051;
         public static final int reg_box_birthday=0x7f07001c;
         public static final int reg_box_city=0x7f070021;
         public static final int reg_box_country=0x7f07001e;
@@ -107,18 +115,18 @@ public final class R {
         public static final int reg_label_nickname=0x7f070019;
         public static final int reg_label_symptoms=0x7f070022;
         public static final int reg_label_welcome=0x7f070014;
-        public static final int soulcontent_category_text=0x7f070041;
+        public static final int soulcontent_category_text=0x7f070049;
         public static final int soulcontent_exlist=0x7f07002d;
-        public static final int soulcontent_exlist_child_navlayout=0x7f070043;
-        public static final int soulcontent_exlist_child_profinformation=0x7f070042;
-        public static final int soulcontent_exlist_child_visitpage=0x7f070044;
-        public static final int soulcontent_exlist_child_writeMessage=0x7f070045;
+        public static final int soulcontent_exlist_child_navlayout=0x7f07004b;
+        public static final int soulcontent_exlist_child_profinformation=0x7f07004a;
+        public static final int soulcontent_exlist_child_visitpage=0x7f07004c;
+        public static final int soulcontent_exlist_child_writeMessage=0x7f07004d;
         public static final int soulcontent_find_layout=0x7f070029;
         public static final int soulcontent_search_button=0x7f07002c;
         public static final int soulcontent_search_field=0x7f07002b;
         public static final int soulmate_find_label=0x7f07002a;
-        public static final int symptoms_exlist_button=0x7f07003c;
-        public static final int symptoms_exlist_name=0x7f07003b;
+        public static final int symptoms_exlist_button=0x7f070044;
+        public static final int symptoms_exlist_name=0x7f070043;
         public static final int welcome=0x7f070031;
     }
     public static final class layout {
@@ -134,14 +142,15 @@ public final class R {
         public static final int fragment_login=0x7f030009;
         public static final int fragment_main=0x7f03000a;
         public static final int postquestion_content=0x7f03000b;
-        public static final int profile_exlist_info_child=0x7f03000c;
-        public static final int profile_exlist_medication_child=0x7f03000d;
-        public static final int profile_exlist_profinfo_category=0x7f03000e;
-        public static final int profile_exlist_symptoms_child=0x7f03000f;
-        public static final int profile_soulmate_menu_fragment=0x7f030010;
-        public static final int question_answer_menu_fragment=0x7f030011;
-        public static final int soulcontent_exlist_categories=0x7f030012;
-        public static final int soulcontent_exlist_child=0x7f030013;
+        public static final int postquestions_adapter_item=0x7f03000c;
+        public static final int profile_exlist_info_child=0x7f03000d;
+        public static final int profile_exlist_medication_child=0x7f03000e;
+        public static final int profile_exlist_profinfo_category=0x7f03000f;
+        public static final int profile_exlist_symptoms_child=0x7f030010;
+        public static final int profile_soulmate_menu_fragment=0x7f030011;
+        public static final int question_answer_menu_fragment=0x7f030012;
+        public static final int soulcontent_exlist_categories=0x7f030013;
+        public static final int soulcontent_exlist_child=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
@@ -169,7 +178,13 @@ public final class R {
         public static final int login_pass_hint=0x7f080005;
         public static final int login_password_label=0x7f080008;
         public static final int login_regbutton_text=0x7f08001b;
+        public static final int postquestions_etext_option_hint=0x7f08003d;
+        public static final int postquestions_etext_question_hint=0x7f08003b;
         public static final int postquestions_message_label_text=0x7f08003a;
+        public static final int postquestions_moreoptions_button_text=0x7f08003e;
+        public static final int postquestions_ok_button_text=0x7f08003f;
+        public static final int postquestions_option_label_text=0x7f08003c;
+        public static final int postquestions_reset_button_text=0x7f080040;
         public static final int profcontent_button_submit=0x7f080021;
         public static final int profcontent_edit_label=0x7f080022;
         public static final int profcontent_feelbox_hint=0x7f080020;
