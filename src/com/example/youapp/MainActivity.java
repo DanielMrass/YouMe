@@ -1,7 +1,7 @@
 package com.example.youapp;
 
-import com.example.UIFragments.LoginScreenFragment;
-import com.example.UIFragments.RegistrationScreenFragment;
+import com.example.UIContentFragments.LoginContentScreenFragment;
+import com.example.UIContentFragments.RegistrationContentScreenFragment;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -23,8 +23,14 @@ public class MainActivity extends Activity {
 
 		//LoginScreenFragment
 		if (savedInstanceState == null) {
+			LoginContentScreenFragment frag = new LoginContentScreenFragment();
+			//TODO noch aus Profiles auslesen
+			Bundle args = new Bundle();
+			args.putBoolean("isRegistered", false);
+			frag.setArguments(args);
+			
 			getFragmentManager().beginTransaction()
-					.replace(R.id.container, new LoginScreenFragment()).addToBackStack("login").commit();
+					.replace(R.id.container, frag).addToBackStack("login").commit();
 		}
 		
 		//RegistrationScreenFragment

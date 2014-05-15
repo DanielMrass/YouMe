@@ -1,7 +1,8 @@
-package com.example.UIFragments;
+package com.example.UIContentFragments;
 
 import java.util.List;
 
+import com.example.UILayoutFragments.ConfirmationLayoutFragment;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -21,7 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegistrationScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener {
+public class RegistrationContentScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener {
 	private Spinner spinner;
 	private View rootView;
 	private Button reg_button;
@@ -100,6 +101,7 @@ public class RegistrationScreenFragment extends Fragment implements OnItemSelect
 		switch(v.getId()){
 		case R.id.reg_button_reg:
 			Toast.makeText(getActivity(), "trololololololololol isengard! oink!", Toast.LENGTH_LONG).show();
+			getFragmentManager().beginTransaction().replace(R.id.container, new ConfirmationLayoutFragment()).commit();
 			break;
 		case R.id.reg_cbox_toc:
 			if (reg_cbox.isChecked()){

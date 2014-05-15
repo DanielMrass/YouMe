@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+    <ToggleButton
+        android:id="@+id/qa_toggle_answerquestion"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textOff="@string/qa_toggle_answerquestion_text"
+        android:textOn="@string/qa_toggle_answerquestion_text" />
+    
+    <ToggleButton
+        android:id="@+id/qa_toggle_postquestion"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textOff="@string/qa_toggle_postquestion_text"
+        android:textOn="@string/qa_toggle_postquestion_text" />
+
+</LinearLayout>

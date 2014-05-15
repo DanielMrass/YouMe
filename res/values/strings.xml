@@ -69,4 +69,10 @@
 	<string name="conf_b2login"><a href="https://www.youtube.com/watch?v=jxVcgDMBU94"> Back to Login </a></string>
 	<string name="conf_logoGross">Großes Logo</string>
 	<string name="conf_profile_label">Confirmation Screen</string>
+	<string name="chat_message_label_text">Messages</string>
+	<string name="qa_toggle_postquestion_text">Post Questions</string>
+	<string name="qa_toggle_answerquestion_text">Answer Questions</string>
+	<string name="answerquestions_message_label_text">Answer Questions</string>
+	<string name="postquestions_message_label_text">Post Questions</string>
+	
 </resources>

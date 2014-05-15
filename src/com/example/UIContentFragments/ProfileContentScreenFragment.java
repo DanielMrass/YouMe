@@ -1,4 +1,4 @@
-package com.example.UIFragments;
+package com.example.UIContentFragments;
 
 import java.util.ArrayList;
 import java.util.HashMap;

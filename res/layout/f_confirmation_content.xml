@@ -6,23 +6,26 @@
 
     <TextView
         android:id="@+id/confirmation_thx4reg"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/conf_thx4reg"
+        android:layout_gravity="center"
         />
     
     <TextView 
         android:id="@+id/confirmation_confMail"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/conf_plsConf"
+        android:layout_gravity="center"
         />
     
     <TextView 
         android:id="@+id/confirmation_b2login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/conf_b2login"
+        android:layout_gravity="center"
         />
 
     <ImageView
@@ -30,6 +33,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logo_gross" 
-        android:contentDescription="@string/conf_logoGross"/>
+        android:contentDescription="@string/conf_logoGross"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dip"
+        />
 
 </LinearLayout>

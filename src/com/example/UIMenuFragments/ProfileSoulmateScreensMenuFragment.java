@@ -1,7 +1,7 @@
 package com.example.UIMenuFragments;
 
-import com.example.UIFragments.ProfileContentScreenFragment;
-import com.example.UIFragments.SoulmateContentScreenFragment;
+import com.example.UIContentFragments.ProfileContentScreenFragment;
+import com.example.UIContentFragments.SoulmateContentScreenFragment;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -42,7 +42,6 @@ public class ProfileSoulmateScreensMenuFragment extends Fragment implements OnCh
 				soulmates.setChecked(false);
 				profile.setClickable(false);
 				soulmates.setClickable(true);
-				//TODO Fragment nachladen
 				getFragmentManager().beginTransaction().replace(R.id.content_placeholder, new ProfileContentScreenFragment()).commit();
 			}
 			break;
@@ -52,7 +51,6 @@ public class ProfileSoulmateScreensMenuFragment extends Fragment implements OnCh
 				profile.setChecked(false);
 				profile.setClickable(true);
 				soulmates.setClickable(false);
-				//TODO Fragment nachladen
 				getFragmentManager().beginTransaction().replace(R.id.content_placeholder, new SoulmateContentScreenFragment()).commit();
 			}
 			break;
