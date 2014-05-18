@@ -5,12 +5,15 @@ import java.util.List;
 import com.example.UILayoutFragments.ConfirmationLayoutFragment;
 import com.example.youapp.R;
 
+import UIDialogFragments.DatePickerFragment;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -22,7 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegistrationContentScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener {
+public class RegistrationContentScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener, OnFocusChangeListener {
 	private Spinner spinner;
 	private View rootView;
 	private Button reg_button;
@@ -49,7 +52,7 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		email_text_box = (EditText) rootView.findViewById(R.id.reg_box_email);
 		nickname_text_box = (EditText) rootView.findViewById(R.id.reg_box_nickname);
 		birthday_text_box = (EditText) rootView.findViewById(R.id.reg_box_birthday);
-		birthday_text_box.setOnClickListener(this);
+		birthday_text_box.setOnFocusChangeListener(this);
 		city_text_box = (EditText) rootView.findViewById(R.id.reg_box_city);
 		plz_text_box = (EditText) rootView.findViewById(R.id.reg_box_plz);
 		
@@ -80,9 +83,9 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		return rootView;
 	}
 	
-	public String showDatePicker(){
-		
-		return "";
+	public void showDatePicker(){
+		DialogFragment df  = new DatePickerFragment();
+		df.show(getFragmentManager(), "datePicker");
 	}
 
 	@Override
@@ -113,14 +116,21 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
             	reg_button.setEnabled(false);
             }
 			break;
-		case R.id.reg_box_birthday:
-			showDatePicker();
-			break;
-			
-		//case Button zurück als View oder beim Registrieren abschicken
-			//legt das oberste Fragement(wo man grade ist) weg und geht zum anderen zurück
-			// getFragmentManager().popBackStack();
-			//break;
+		}
+	}
+	
+	public void giveBackMyBirthday(String date){
+		birthday_text_box.setText(date);
+	}
+
+	@Override
+	public void onFocusChange(View v, boolean hasFocus) {
+		switch(v.getId()){
+			case R.id.reg_box_birthday:
+				if(hasFocus){
+					showDatePicker();
+				}
+				break;
 		}
 	}
 }

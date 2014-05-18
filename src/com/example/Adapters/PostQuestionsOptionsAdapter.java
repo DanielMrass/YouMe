@@ -7,6 +7,7 @@ import com.example.youapp.R;
 import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.KeyListener;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -51,8 +52,27 @@ public class PostQuestionsOptionsAdapter extends BaseAdapter {
 			convertView = inflater.inflate(R.layout.postquestions_adapter_item, null);
 //		}
 		
-		EditText et = (EditText) convertView.findViewById(R.id.postquestion_option_text);
+		final EditText et = (EditText) convertView.findViewById(R.id.postquestion_option_text);
 		et.setText(optionsList.get(position));
+		et.setTag(position);
+		et.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				optionsList.set((Integer) et.getTag(), s.toString());
+			}
+		});
 		return convertView;
 	}
 

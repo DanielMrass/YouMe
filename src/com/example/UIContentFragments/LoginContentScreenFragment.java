@@ -77,7 +77,7 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
 				getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesLayoutFragment()).commit();
 			}
 			else {
-				getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationContentScreenFragment()).commit();
+				getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationContentScreenFragment(), "registrationFragment").commit();
 			}
 			break;
 //		case R.id.login_regbutton:
