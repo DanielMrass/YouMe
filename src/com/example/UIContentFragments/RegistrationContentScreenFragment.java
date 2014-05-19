@@ -1,5 +1,6 @@
 package com.example.UIContentFragments;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.UILayoutFragments.ConfirmationLayoutFragment;
@@ -37,8 +38,8 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 	private EditText city_text_box;
 	private EditText plz_text_box;
 	
-	private List<String> symptoms;
-	private List<String> medicines;
+	private List<String> symptoms = new ArrayList<String>();
+	private List<String> medicines = new ArrayList<String>();
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -61,12 +62,9 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		//einfach Werte als Liste nebenan tracken
 		
 		spinner = (Spinner) rootView.findViewById(R.id.reg_box_country);
-		// Create an ArrayAdapter using the string array and a default spinner layout
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
 		        R.array.reg_countries_array, android.R.layout.simple_spinner_item);
-		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		// Apply the adapter to the spinner
 		spinner.setAdapter(adapter);
 		spinner.setOnItemSelectedListener(this);
 		
@@ -79,6 +77,8 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		
 		TextView toc_labelText = (TextView) rootView.findViewById(R.id.reg_label_cbox);
 		toc_labelText.setMovementMethod(LinkMovementMethod.getInstance());
+		
+		
 		
 		return rootView;
 	}
@@ -103,7 +103,7 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.reg_button_reg:
-			Toast.makeText(getActivity(), "trololololololololol isengard! oink!", Toast.LENGTH_LONG).show();
+//			Toast.makeText(getActivity(), "trololololololololol isengard! oink!", Toast.LENGTH_LONG).show();
 			getFragmentManager().beginTransaction().replace(R.id.container, new ConfirmationLayoutFragment()).commit();
 			break;
 		case R.id.reg_cbox_toc:
