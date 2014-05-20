@@ -2,4 +2,5 @@
 <resources>
     <color name="special_green">#228B22</color>
     <color name="special_white">#FFFAFA</color>
+    <color name="special_black">#000000</color>
 </resources>

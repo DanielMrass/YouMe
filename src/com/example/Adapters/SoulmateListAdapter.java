@@ -3,6 +3,8 @@ package com.example.Adapters;
 import java.util.HashMap;
 import java.util.List;
 
+import com.example.UIContentFragments.ChatScreenContentFragment;
+import com.example.UILayoutFragments.ProfileSoulmatesLayoutFragment;
 import com.example.youapp.R;
 
 import android.app.Activity;
@@ -10,9 +12,12 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SoulmateListAdapter extends BaseExpandableListAdapter {
 
@@ -62,11 +67,28 @@ public class SoulmateListAdapter extends BaseExpandableListAdapter {
 		Drawable icon = activity.getResources().getDrawable((Integer) obj.get(0));
 		tv.setCompoundDrawablesRelativeWithIntrinsicBounds(icon, null, null, null);
 		
-		TextView visit = (TextView) convertView.findViewById(R.id.soulcontent_exlist_child_visitpage);
+		Button visit = (Button) convertView.findViewById(R.id.soulcontent_exlist_child_visitpage);
 		visit.setText((String)obj.get(2));
+		visit.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//TODO Load other persons profile fragment -> new fragment?
+				activity.getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesLayoutFragment()).commit();
+				Toast.makeText(activity, "This should be " + ((Button)v).getText() + "s Profile", Toast.LENGTH_SHORT).show();
+			}
+		});
 		
-		TextView write = (TextView) convertView.findViewById(R.id.soulcontent_exlist_child_writeMessage);
+		Button write = (Button) convertView.findViewById(R.id.soulcontent_exlist_child_writeMessage);
 		write.setText((String) obj.get(3));
+		write.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Set the field for the addressat from here
+				activity.getFragmentManager().beginTransaction().replace(R.id.container, new ChatScreenContentFragment()).commit();
+				Toast.makeText(activity, "Came here through " + ((Button)v).getText(), Toast.LENGTH_SHORT).show();
+			}
+		});
 		
 		return convertView;
 	}

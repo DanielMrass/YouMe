@@ -3,6 +3,8 @@ package com.example.UIContentFragments;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.Adapters.MedicationAdapter;
+import com.example.Adapters.SymptomsAdapter;
 import com.example.UILayoutFragments.ConfirmationLayoutFragment;
 import com.example.youapp.R;
 
@@ -22,6 +24,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,9 +41,12 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 	private EditText birthday_text_box;
 	private EditText city_text_box;
 	private EditText plz_text_box;
+	private ListView symptomListView;
+	private ImageButton add_symptom_button;
 	
-	private List<String> symptoms = new ArrayList<String>();
-	private List<String> medicines = new ArrayList<String>();
+	private ArrayList<String> symptoms = new ArrayList<String>();
+	private ArrayList<String> medicines = new ArrayList<String>();
+	private ListView medicationListView;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -56,10 +63,6 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		birthday_text_box.setOnFocusChangeListener(this);
 		city_text_box = (EditText) rootView.findViewById(R.id.reg_box_city);
 		plz_text_box = (EditText) rootView.findViewById(R.id.reg_box_plz);
-		
-		//TODO Symptome + Medizin noch in XML richtig definieren
-		//einfach an eine ViewGroup(LinearLayout) vertical ne View als Child dranpacken für jedes Symptom
-		//einfach Werte als Liste nebenan tracken
 		
 		spinner = (Spinner) rootView.findViewById(R.id.reg_box_country);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -78,11 +81,37 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		TextView toc_labelText = (TextView) rootView.findViewById(R.id.reg_label_cbox);
 		toc_labelText.setMovementMethod(LinkMovementMethod.getInstance());
 		
+		symptomListView = (ListView) rootView.findViewById(R.id.reg_list_symptoms);
+		createDummySymptoms();
+		SymptomsAdapter sma = new SymptomsAdapter(getActivity(), symptoms);
+		symptomListView.setAdapter(sma);
 		
+		ImageButton imgButton = (ImageButton) rootView.findViewById(R.id.reg_add_symptoms_button);
+		imgButton.setOnClickListener(this);
+		
+		medicationListView = (ListView)rootView.findViewById(R.id.reg_list_medicines);
+		createDummyMedication();
+		MedicationAdapter ma = new MedicationAdapter(getActivity(), medicines);
+		medicationListView.setAdapter(ma);
+		
+		ImageButton addMedicine = (ImageButton) rootView.findViewById(R.id.reg_add_medicine_button);
+		addMedicine.setOnClickListener(this);
 		
 		return rootView;
 	}
 	
+	private void createDummyMedication() {
+		medicines.add("Coffee");
+		medicines.add("More Coffee");
+		medicines.add("...");
+	}
+
+	private void createDummySymptoms() {
+		symptoms.add("cleverness");
+		symptoms.add("clear speech");
+		symptoms.add("good look");
+	}
+
 	public void showDatePicker(){
 		DialogFragment df  = new DatePickerFragment();
 		df.show(getFragmentManager(), "datePicker");
@@ -115,6 +144,12 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
             	reg_button = (Button) rootView.findViewById(R.id.reg_button_reg);
             	reg_button.setEnabled(false);
             }
+			break;
+		case R.id.reg_add_symptoms_button:
+			//TODO Symptom hinzufügen
+			break;
+		case R.id.reg_add_medicine_button:
+			//TODO Medizin hinzufügen
 			break;
 		}
 	}

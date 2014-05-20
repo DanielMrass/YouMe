@@ -80,5 +80,5 @@
 	<string name="postquestions_moreoptions_button_text">Add Option</string>
 	<string name="postquestions_ok_button_text">OK</string>
 	<string name="postquestions_reset_button_text">Reset</string>
-	
+	<string name="reg_pers_info_label">Personal Information</string>	
 </resources>

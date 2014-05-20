@@ -26,7 +26,6 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	private List<String> categories; 
 	//contains Data regarding to the childs -> Profile Information, 
 	private HashMap<String, List<Object>> childData;
-	
 	private Activity activity;
 	
 	

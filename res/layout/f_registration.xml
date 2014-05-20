@@ -15,8 +15,20 @@
         android:layout_height="wrap_content" >
 
         <TableLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+                <TextView
+                    style="@style/myOwnTextFieldStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reg_pers_info_label"
+                    />
+            </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
@@ -136,6 +148,27 @@
         </TableLayout>
     </ScrollView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/myOwnTextFieldStyle"
+            android:id="@+id/reg_symptoms_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:text="@string/reg_symptoms_label" >
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/reg_add_symptoms_button"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:src="@drawable/plus_24" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/reg_list_symptoms"
@@ -143,6 +176,27 @@
         android:layout_height="wrap_content" >
     </ListView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/myOwnTextFieldStyle"
+            android:id="@+id/reg_medicine_text"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:text="@string/reg_medicine_label" >
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/reg_add_medicine_button"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:src="@drawable/plus_24" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/reg_list_medicines"
