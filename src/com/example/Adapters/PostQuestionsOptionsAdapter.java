@@ -1,66 +1,40 @@
 package com.example.Adapters;
 
-import java.util.ArrayList;
 
+import com.example.CallbackInterfaces.PostQuestionCallback;
 import com.example.youapp.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.method.KeyListener;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
-public class PostQuestionsOptionsAdapter extends BaseAdapter {
-
-	private ArrayList<String> optionsList = new ArrayList<String>();
+public class PostQuestionsOptionsAdapter extends ArrayAdapter<String> {
 	
-
-	private Activity activity;
+	private PostQuestionCallback pqc;
+	private LayoutInflater inflater;
 	
-	public PostQuestionsOptionsAdapter(Activity act, ArrayList<String> data){
-		this.activity=act;
-		this.optionsList = data;
-		notifyDataSetChanged();
-	}
-	
-	
-	@Override
-	public int getCount() {
-		return optionsList.size();
+	public PostQuestionsOptionsAdapter(Context context) {
+		super(context, 1);
+		this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
 	@Override
-	public Object getItem(int position) {
-		return optionsList.get(position);
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
-
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-//		if(convertView == null){
-			LayoutInflater inflater = (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	public View getView(final int position, View convertView, ViewGroup parent) {
+		if(convertView == null){
 			convertView = inflater.inflate(R.layout.postquestions_adapter_item, null);
-//		}
+		}
 		
 		final EditText et = (EditText) convertView.findViewById(R.id.postquestion_option_text);
-		et.setText(optionsList.get(position));
-		et.setTag(position);
+		et.setText(getItem(position));
 		et.addTextChangedListener(new TextWatcher() {
 			
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
@@ -70,18 +44,15 @@ public class PostQuestionsOptionsAdapter extends BaseAdapter {
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				optionsList.set((Integer) et.getTag(), s.toString());
+				if(s!=null&&et.hasFocus()){
+					pqc.updateListData(position, s);
+				}
 			}
 		});
 		return convertView;
 	}
-
-	public void updateResults(ArrayList<String> newData){
-		this.optionsList = newData;
-		notifyDataSetChanged();
-	}
 	
-	public ArrayList<String> getOptionsList() {
-		return optionsList;
+	public void setCallbackInterface(PostQuestionCallback pqc){
+		this.pqc = pqc;
 	}
 }

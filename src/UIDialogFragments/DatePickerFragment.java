@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.example.CallbackInterfaces.BirthdayCallBack;
 import com.example.UIContentFragments.RegistrationContentScreenFragment;
 import com.example.youapp.R;
 
@@ -19,6 +20,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 public class DatePickerFragment extends DialogFragment implements OnDateSetListener {
+	
+	private BirthdayCallBack birthCall;
 	
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -36,10 +39,13 @@ public class DatePickerFragment extends DialogFragment implements OnDateSetListe
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 		String date = sdf.format(c);
 		Log.i("DIALOG", date);
-		RegistrationContentScreenFragment rcsf = (RegistrationContentScreenFragment) getFragmentManager().findFragmentByTag("registrationFragment");
-		rcsf.giveBackMyBirthday(date);
+//		RegistrationContentScreenFragment rcsf = (RegistrationContentScreenFragment) getFragmentManager().findFragmentByTag("registrationFragment");
+//		rcsf.giveBackMyBirthday(date);
+		birthCall.giveBackMyBirthday(date);
 	}
 	
-	
+	public void setBirthdayCallback(BirthdayCallBack birthCall){
+		this.birthCall = birthCall;
+	}
 	
 }

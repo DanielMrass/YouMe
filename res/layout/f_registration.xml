@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" 
+	    >
     <TextView
         android:id="@+id/reg_label_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_message" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
 
         <TableLayout
             android:layout_width="match_parent"
@@ -146,8 +147,6 @@
                     android:singleLine="true" />
             </TableRow>
         </TableLayout>
-    </ScrollView>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -229,5 +228,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/reg_reg_label" />
-
+    </LinearLayout>
 </LinearLayout>

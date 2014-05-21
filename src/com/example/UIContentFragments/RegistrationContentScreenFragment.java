@@ -1,13 +1,17 @@
 package com.example.UIContentFragments;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.example.Adapters.MedicationAdapter;
 import com.example.Adapters.SymptomsAdapter;
+import com.example.CallbackInterfaces.BirthdayCallBack;
+import com.example.CallbackInterfaces.MedicineCallBack;
+import com.example.CallbackInterfaces.SymptomCallBack;
 import com.example.UILayoutFragments.ConfirmationLayoutFragment;
 import com.example.youapp.R;
 
+import UIDialogFragments.AddMedicinesFragment;
+import UIDialogFragments.AddSymptomFragment;
 import UIDialogFragments.DatePickerFragment;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -30,23 +34,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class RegistrationContentScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener, OnFocusChangeListener {
+public class RegistrationContentScreenFragment extends Fragment implements OnItemSelectedListener, OnClickListener, OnFocusChangeListener, MedicineCallBack, SymptomCallBack, BirthdayCallBack {
 	private Spinner spinner;
 	private View rootView;
 	private Button reg_button;
 	private CheckBox reg_cbox;
-	private EditText name_text_box;
-	private EditText email_text_box;
-	private EditText nickname_text_box;
 	private EditText birthday_text_box;
-	private EditText city_text_box;
-	private EditText plz_text_box;
 	private ListView symptomListView;
-	private ImageButton add_symptom_button;
 	
 	private ArrayList<String> symptoms = new ArrayList<String>();
 	private ArrayList<String> medicines = new ArrayList<String>();
 	private ListView medicationListView;
+	private MedicationAdapter medAdapter;
+	private SymptomsAdapter sympAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -55,14 +55,9 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		
 		rootView = inflater.inflate(R.layout.f_registration, container,
 				false);
-	
-		name_text_box = (EditText) rootView.findViewById(R.id.reg_box_name); 
-		email_text_box = (EditText) rootView.findViewById(R.id.reg_box_email);
-		nickname_text_box = (EditText) rootView.findViewById(R.id.reg_box_nickname);
+		
 		birthday_text_box = (EditText) rootView.findViewById(R.id.reg_box_birthday);
 		birthday_text_box.setOnFocusChangeListener(this);
-		city_text_box = (EditText) rootView.findViewById(R.id.reg_box_city);
-		plz_text_box = (EditText) rootView.findViewById(R.id.reg_box_plz);
 		
 		spinner = (Spinner) rootView.findViewById(R.id.reg_box_country);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -83,16 +78,20 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		
 		symptomListView = (ListView) rootView.findViewById(R.id.reg_list_symptoms);
 		createDummySymptoms();
-		SymptomsAdapter sma = new SymptomsAdapter(getActivity(), symptoms);
-		symptomListView.setAdapter(sma);
+		sympAdapter = new SymptomsAdapter(getActivity());
+		sympAdapter.addAll(symptoms);
+		sympAdapter.setSympCallback(this);
+		symptomListView.setAdapter(sympAdapter);
 		
 		ImageButton imgButton = (ImageButton) rootView.findViewById(R.id.reg_add_symptoms_button);
 		imgButton.setOnClickListener(this);
 		
 		medicationListView = (ListView)rootView.findViewById(R.id.reg_list_medicines);
 		createDummyMedication();
-		MedicationAdapter ma = new MedicationAdapter(getActivity(), medicines);
-		medicationListView.setAdapter(ma);
+		medAdapter = new MedicationAdapter(getActivity());
+		medAdapter.addAll(medicines);
+		medAdapter.setMedCallBack(this);
+		medicationListView.setAdapter(medAdapter);
 		
 		ImageButton addMedicine = (ImageButton) rootView.findViewById(R.id.reg_add_medicine_button);
 		addMedicine.setOnClickListener(this);
@@ -100,6 +99,7 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		return rootView;
 	}
 	
+	// Dummy methods for data-initialization
 	private void createDummyMedication() {
 		medicines.add("Coffee");
 		medicines.add("More Coffee");
@@ -112,11 +112,7 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		symptoms.add("good look");
 	}
 
-	public void showDatePicker(){
-		DialogFragment df  = new DatePickerFragment();
-		df.show(getFragmentManager(), "datePicker");
-	}
-
+	//Item-Selection Listener Methods -> for Spinner
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View v, int pos,
 			long id) {
@@ -146,26 +142,58 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
             }
 			break;
 		case R.id.reg_add_symptoms_button:
-			//TODO Symptom hinzufügen
+			DialogFragment dfrag = new AddSymptomFragment();
+			dfrag.show(getFragmentManager(), "addSymptom");
+			((AddSymptomFragment) dfrag).setSympCall(this);
 			break;
 		case R.id.reg_add_medicine_button:
-			//TODO Medizin hinzufügen
+			DialogFragment df = new AddMedicinesFragment();
+			df.show(getFragmentManager(), "addMedicine");
+			((AddMedicinesFragment) df).setMedCall(this);
 			break;
 		}
 	}
-	
-	public void giveBackMyBirthday(String date){
-		birthday_text_box.setText(date);
-	}
 
+	
 	@Override
 	public void onFocusChange(View v, boolean hasFocus) {
 		switch(v.getId()){
 			case R.id.reg_box_birthday:
 				if(hasFocus){
-					showDatePicker();
-				}
+					DialogFragment df  = new DatePickerFragment();
+					df.show(getFragmentManager(), "datePicker");
+					((DatePickerFragment) df).setBirthdayCallback(this);				}
 				break;
 		}
+	}
+	
+	
+	//Callback Methods
+	public void giveBackMyBirthday(String date){
+		birthday_text_box.setText(date);
+	}
+	
+	@Override
+	public void deleteMedicineFromList(int position) {
+		medAdapter.remove(medicines.get(position));
+		medicines.remove(position);
+	}
+
+	@Override
+	public void deleteSymptomFromList(int position) {
+		sympAdapter.remove(symptoms.get(position));
+		symptoms.remove(position);
+	}
+
+	@Override
+	public void addMedicine(String medicine) {
+		medicines.add(medicine);
+		medAdapter.add(medicine);
+	}
+
+	@Override
+	public void addSymptom(String symptom) {
+		symptoms.add(symptom);
+		sympAdapter.add(symptom);
 	}
 }
