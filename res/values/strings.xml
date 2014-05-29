@@ -82,5 +82,11 @@
 	<string name="postquestions_reset_button_text">Reset</string>
 	<string name="reg_pers_info_label">Personal Information</string>
 	<string name="add_symptoms_hint">Symptom</string>
-	<string name="add_medicine_hint">Medicine</string>	
+	<string name="add_medicine_hint">Medicine</string>
+	<string name="answerquestions_ok_button_text">OK</string>
+	<string name="answerquestions_skip_button_text">Skip</string>
+	<string name="answerquestion_rating_label">Importance</string>
+	<string name="answerquestion_rating_low">Low</string>
+	<string name="answerquestion_rating_high">High</string>
+	<string name="answerquestions_my_answers_label">My Answers</string>	
 </resources>

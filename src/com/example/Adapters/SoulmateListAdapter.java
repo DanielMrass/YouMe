@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class SoulmateListAdapter extends BaseExpandableListAdapter {
 
 	//TODO Fehlerüberprüfung beim erstellen der Views
-	
+	//TODO möglicherweise keinen ExpandableListAdapter nehmen 
 	
 	//Class Variables
 	//hier stehen Proposed Soulmates und MySoulamtes drin!
@@ -41,7 +41,6 @@ public class SoulmateListAdapter extends BaseExpandableListAdapter {
 	
 	@Override
 	public Object getChild(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
 		return this.childData.get(this.categories.get(groupPosition)).get(childPosition);
 	}
 

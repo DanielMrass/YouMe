@@ -4,17 +4,97 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-	 <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" 
-        >
 	<TextView
 	    android:id="@+id/answerquestions_message_label"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:text="@string/answerquestions_message_label_text"
 	    />
+	<Spinner
+	    android:id="@+id/answerquestion_question_spinner"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    />
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    >
+	<RadioGroup
+	    android:id="@+id/answerquestion_radio_button_group"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    >
+	</RadioGroup>
+	</ScrollView>
+	<TextView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/answerquestion_rating_label"
+	        ></TextView>
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    >
+	    <SeekBar
+	    android:id="@+id/answerquestion_rating_bar"
+	    android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:progress="0"
+        android:max="10"
+	     />
 	</LinearLayout>
-
+<!-- 	<RelativeLayout -->
+<!-- 	    android:layout_width="match_parent" -->
+<!-- 	    android:layout_height="wrap_content" -->
+<!-- 	    android:orientation="horizontal"  -->
+<!-- 	    > -->
+<!-- 	    <TextView -->
+<!-- 	        android:layout_width="wrap_content" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        android:layout_alignParentLeft="true" -->
+<!-- 	        android:text="@string/answerquestion_rating_low" -->
+<!-- 	        ></TextView> -->
+<!-- 	    <TextView -->
+<!-- 	        android:layout_width="wrap_content" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        android:layout_alignParentRight="true" -->
+<!-- 	        android:text="@string/answerquestion_rating_high" -->
+<!-- 	        ></TextView> -->
+<!-- 	</RelativeLayout> -->
+<!-- 	<LinearLayout -->
+<!-- 	    android:layout_height="wrap_content" -->
+<!-- 	    android:layout_width="match_parent" -->
+<!-- 	    android:orientation="horizontal"  -->
+<!-- 	    > -->
+<!-- 	    <Button -->
+<!-- 	        android:id="@+id/answerquestion_ok_button" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        android:layout_width="0dip" -->
+<!-- 	        android:layout_weight="0.5" -->
+<!-- 	        android:text="@string/answerquestions_ok_button_text"  -->
+<!-- 	        /> -->
+	    
+<!-- 	    <Button -->
+<!-- 	        android:id="@+id/answerquestion_skip_button" -->
+<!-- 	        android:layout_height="wrap_content" -->
+<!-- 	        android:layout_width="0dip" -->
+<!-- 	        android:layout_weight="0.5"  -->
+<!-- 	        android:text="@string/answerquestions_skip_button_text" -->
+<!-- 	        /> -->
+<!-- 	</LinearLayout> -->
+	<TextView
+	    style="@style/myOwnTextFieldStyle"
+	    android:id="@+id/answerquestions_my_answers_label"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/answerquestions_my_answers_label"
+	    android:drawableRight="@drawable/arrow_cbox_down"
+	    />
+	    <ListView
+	        android:id="@+id/answerquestions_my_answers_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        ></ListView>
+	
 </LinearLayout>
