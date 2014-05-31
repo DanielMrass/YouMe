@@ -5,25 +5,8 @@
     android:orientation="vertical" >
 	
     <TextView
-        android:id="@+id/profile_exlist_info_child_name"
+        android:id="@+id/profile_exlist_info_child"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/profile_exlist_info_child_land"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/profile_exlist_info_child_mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <ImageButton
-        android:id="@+id/profile_exlist_info_child_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:contentDescription="editButton"
-        android:src="@drawable/edit_pen"
-        />
 </LinearLayout>

@@ -2,13 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="horizontal" >
     
 	<TextView
         style="@style/myOwnTextFieldStyle"
         android:id="@+id/profcontent_category_text"
-        android:layout_width="fill_parent"
+        android:layout_width="0dip"
+        android:layout_weight="0.9"
         android:layout_height="50dip"
         />
-	
+	<ImageButton
+	    android:id="@+id/profcontent_category_button"
+        android:layout_width="0dip"
+        android:layout_weight="0.1"
+        android:layout_height="50dip"
+        android:src="@drawable/plus_24"
+        android:background="@color/special_green"
+        android:focusable="false"
+	    />
 </LinearLayout>

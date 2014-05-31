@@ -91,18 +91,12 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 		return rootView;
 	}
 
-	
-	
-	
 	private void createDummyAnsweredQuestions() {
 		for(int i = 0; i<5; i++){
 			AnsweredQuestion aq = new AnsweredQuestion("Question "+i, "Answer " +i);
 			myAnsweredQuestionsList.add(aq);
 		}
 	}
-
-
-
 
 	private ArrayList<String> createDummyAnswers(int position) {
 		ArrayList<String> answers = new ArrayList<String>(); 
@@ -140,9 +134,6 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 		return answers;
 	}
 
-
-
-
 	private void fillRadioGroup(ArrayList<String> data) {
 		Log.i("ANSWERS", data.toString());
 		answersGroup.removeAllViews();
@@ -154,9 +145,6 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 		}
 	}
 
-
-
-
 	private ArrayList<String> createDummyQuestions() {
 		ArrayList<String> questions = new ArrayList<String>();
 		questions.add("What is your favourite color?");
@@ -165,9 +153,6 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 		questions.add("What is your favourite sports?");
 		return questions;
 	}
-
-
-
 
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -198,8 +183,6 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 			break;
 		}
 	}
-
-
 
 	//OnItemSelectedListener
 	@Override

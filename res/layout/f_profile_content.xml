@@ -40,4 +40,15 @@
         android:layout_height="wrap_content" 
 	    ></ExpandableListView>
 	
+	<ExpandableListView
+	    android:id="@+id/profile_exlist_symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  
+	    ></ExpandableListView>
+	<ExpandableListView
+	    android:id="@+id/profile_exlist_medication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+	    >
+	</ExpandableListView>
 </LinearLayout>

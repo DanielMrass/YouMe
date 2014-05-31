@@ -10,6 +10,16 @@ public class Soulmates implements Parcelable {
 	private String origin;
 
 	// TODO damit den Soulmateadapter füllen
+	public Soulmates(){
+		
+	}
+	
+	public Soulmates(String name, String age, String origin){
+		this.name = name;
+		this.age = age;
+		this.origin = origin;
+	}
+	
 	@Override
 	public int describeContents() {
 		return 0;
@@ -26,6 +36,11 @@ public class Soulmates implements Parcelable {
 		if (origin != null) {
 			dest.writeString(origin);
 		}
+	}
+
+	@Override
+	public String toString() {
+		return name + ", " + age + ", " +origin;
 	}
 
 	public static final Parcelable.Creator<Soulmates> CREATOR = new Parcelable.Creator<Soulmates>() {

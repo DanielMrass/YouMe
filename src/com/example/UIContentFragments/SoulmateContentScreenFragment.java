@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.example.Adapters.SoulmateListAdapter;
+import com.example.CallbackInterfaces.SoulmateCallback;
+import com.example.Models.Soulmates;
 import com.example.youapp.R;
 
 import android.app.Fragment;
@@ -14,10 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-public class SoulmateContentScreenFragment extends Fragment {
+public class SoulmateContentScreenFragment extends Fragment implements SoulmateCallback{
 	
 	private List<String> categories = new ArrayList<String>();
-	private HashMap<String, List<Object>> data = new HashMap<String, List<Object>>();
+	private HashMap<String, List<Soulmates>> data = new HashMap<String, List<Soulmates>>();
+	private SoulmateListAdapter slma;
 	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -31,7 +34,8 @@ public class SoulmateContentScreenFragment extends Fragment {
 		expv.setClickable(false);
 		//TODO die Daten noch über JSON einholen
 		prepareTestData();
-		SoulmateListAdapter slma = new SoulmateListAdapter(getActivity(), categories, data);
+		slma = new SoulmateListAdapter(getActivity(), categories, data);
+		slma.setSoulCall(this);
 		expv.setAdapter(slma);
 		return rootView;
 	}
@@ -42,28 +46,32 @@ public class SoulmateContentScreenFragment extends Fragment {
 		categories.add("My Soulmates");
 		
 		//create child Data for Categories
-		List<Object> proposed = new ArrayList<Object>();
+		List<Soulmates> proposed = new ArrayList<Soulmates>();
 		for(int i = 0; i<2; i++){
-			List<Object> temp = new ArrayList<Object>();
-			temp.add(R.drawable.logo_zeichen);
-			temp.add("Soulmate" + i);
-			temp.add("Visit Soulmate "+i + " Page");
-			temp.add("Write Soulmate " +i+" a message");
+			Soulmates temp = new Soulmates();
+			temp.setName("Soulmate" + i);
+			temp.setAge("" + (i+20));
+			temp.setOrigin("Utopia");
 			proposed.add(temp);
 		}
 		
-		List<Object> mysoulmates = new ArrayList<Object>();
+		List<Soulmates> mysoulmates = new ArrayList<Soulmates>();
 		for(int j = 0; j<4; j++){
-			List<Object> temp = new ArrayList<Object>();
-			temp.add(R.drawable.logo_zeichen);
-			temp.add("Soulmate" + j);
-			temp.add("Visit Soulmate "+j + " Page");
-			temp.add("Write Soulmate " +j+" a message");
+			Soulmates temp= new Soulmates();
+			temp.setName("Soulmate" + j);
+			temp.setAge("" + (j+20));
+			temp.setOrigin("Utopia");
 			mysoulmates.add(temp);
 		}
 		
 		//add the child data to the categories
 		data.put(categories.get(0), proposed);
 		data.put(categories.get(1), mysoulmates);
+	}
+
+	@Override
+	public void removeSoulmate(int groupPosition, int childPosition) {
+		data.get(categories.get(groupPosition)).remove(childPosition);
+		slma.updateListData(data);
 	}
 }

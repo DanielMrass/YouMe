@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:textColor="@color/special_black"
+            android:textSize="12sp"
             />
 
         <Button
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:textColor="@color/special_black"
+            android:textSize="12sp"
              />
     </LinearLayout>
 

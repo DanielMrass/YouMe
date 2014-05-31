@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.example.CallbackInterfaces.ProfileCallBack;
+import com.example.CallbackInterfaces.MedicineCallBack;
 import com.example.youapp.R;
 
+import UIDialogFragments.AddMedicinesFragment;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -20,7 +22,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ProfileListAdapter extends BaseExpandableListAdapter {
+public class ProfileMedicationAdapter extends BaseExpandableListAdapter {
 
 	//TODO Fehlerüberprüfung beim erstellen der Views
 	
@@ -28,22 +30,21 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 	//Class Variables
 	//contains Profile Information, Medicine und Symptoms!
 	private String category; 
-	//contains Data regarding to the childs -> Profile Information, 
-	private ArrayList<String> profileInformation;
+	//contains Data regarding to the childs -> Profile Information,
+	private ArrayList<String> medication;
+	private MedicineCallBack medCall;
 	private Activity activity;
 	
-	private ProfileCallBack profCall;
 	
-	
-	public ProfileListAdapter(Activity act, String cat, ArrayList<String> data){
+	public ProfileMedicationAdapter(Activity act, String cat, ArrayList<String> data){
 		this.activity = act;
 		this.category = cat;
-		this.profileInformation = data;
+		this.medication = data;
 	}
 	
 	@Override
 	public String getChild(int groupPosition, int childPosition) {
-		return profileInformation.get(childPosition);
+		return this.medication.get(childPosition);
 	}
 
 	@Override
@@ -51,25 +52,31 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 		return childPosition;
 	}
 
-	//TODO auf Profile umbauen
 	@Override
-	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView,
+	public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView,
 			ViewGroup parent) {
+		String medication = getChild(groupPosition, childPosition);
 		
-			if(convertView == null){
-				LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				convertView = inflater.inflate(R.layout.profile_exlist_info_child, null);
+		LayoutInflater infalInflater = (LayoutInflater) activity.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = infalInflater.inflate(R.layout.profile_exlist_medication_child, null);
+		
+		TextView medicationView = (TextView) convertView.findViewById(R.id.medication_exlist_name);
+		medicationView.setText(medication);
+		
+		ImageButton imageButton = (ImageButton) convertView.findViewById(R.id.medication_exlist_button);
+		imageButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				medCall.deleteMedicineFromList(childPosition);
 			}
-			
-		TextView name = (TextView) convertView.findViewById(R.id.profile_exlist_info_child);
-		name.setText(profileInformation.get(childPosition));
+		});
 		
 		return convertView;
 	}
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
-		return profileInformation.size();
+		return medication.size();
 	}
 
 	@Override
@@ -100,15 +107,15 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 		tv.setText(categoryTitle);
 		
 		ImageButton imageButton = (ImageButton) convertView.findViewById(R.id.profcontent_category_button);
-		imageButton.setImageDrawable(activity.getResources().getDrawable(R.drawable.edit_pen));
-		imageButton.setFocusable(false);
 		imageButton.setFocusableInTouchMode(false);
+		imageButton.setFocusable(false);
 		imageButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//TODO Edit-DialogFragment for Profile
-				
+				DialogFragment df = new AddMedicinesFragment();
+				df.show(activity.getFragmentManager(), "addMedicine");
+				((AddMedicinesFragment) df).setMedCall(medCall);
 			}
 		});
 		return convertView;
@@ -124,12 +131,12 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 		return true;
 	}
 	
-	public void updateProfileData(ArrayList<String> profileInformation){
-		this.profileInformation = profileInformation;
+	public void updateDataList(ArrayList<String> medication){
+		this.medication = medication;
 		notifyDataSetChanged();
 	}
-
-	public void setProfCallback(ProfileCallBack profCall){
-		this.profCall = profCall;
+	
+	public void setProfMedCallBack(MedicineCallBack medCall){
+		this.medCall = medCall;
 	}
 }
