@@ -1,8 +1,6 @@
 package com.example.Adapters;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import com.example.CallbackInterfaces.MedicineCallBack;
 import com.example.youapp.R;
@@ -11,8 +9,6 @@ import UIDialogFragments.AddMedicinesFragment;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ProfileMedicationAdapter extends BaseExpandableListAdapter {
 

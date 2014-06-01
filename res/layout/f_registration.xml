@@ -8,149 +8,163 @@
 <!--         android:layout_width="match_parent" -->
 <!--         android:layout_height="wrap_content"  -->
 <!--         > -->
-	<LinearLayout
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical" 
-	    >
     <TextView
         android:id="@+id/reg_label_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login_message" />
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+	<TextView
+		style="@style/myOwnTextFieldStyle"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/reg_pers_info_label"
+	/>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-                <TextView
-                    style="@style/myOwnTextFieldStyle"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reg_pers_info_label"
-                    />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
                     android:text="@string/reg_name_label" />
 
                 <EditText
                     android:id="@+id/reg_box_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
                     android:layout_weight="0.75"
                     android:hint="@string/reg_box_name_hint"
                     android:singleLine="true" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_email"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
                     android:text="@string/reg_email_label" />
 
                 <EditText
                     android:id="@+id/reg_box_email"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
                     android:layout_weight="0.75"
                     android:hint="@string/reg_box_email_hint"
                     android:inputType="textEmailAddress"
                     android:singleLine="true" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_nickname"
-                    android:text="@string/reg_nickname_label" />
+                    android:text="@string/reg_nickname_label"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                     />
 
                 <EditText
                     android:id="@+id/reg_box_nickname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dip"
                     android:layout_weight="0.75"
+                    android:layout_height="wrap_content"
                     android:hint="@string/reg_box_nickname_hint"
                     android:singleLine="true" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_birthday"
-                    android:text="@string/reg_birthday_label" />
+                    android:text="@string/reg_birthday_label"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content" 
+                    />
 
                 <EditText
                     android:id="@+id/reg_box_birthday"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
                     android:layout_weight="0.75"
                     android:hint="@string/reg_box_birthday_hint"
                     android:singleLine="true" />
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_country"
-                    android:text="@string/reg_country_label" />
+                    android:text="@string/reg_country_label"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    />
 
                 <Spinner
                     android:id="@+id/reg_box_country"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
                     android:layout_weight="0.75" />
-            </TableRow>
+            </LinearLayout>
 
             <!-- Muss je nach Country noch angepasst werden -->
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                 >
 
                 <TextView
                     android:id="@+id/reg_label_city"
-                    android:text="@string/reg_city_label" />
+                    android:text="@string/reg_city_label"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content" 
+                    />
 
                 <EditText
                     android:id="@+id/reg_box_plz"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.2"
                     android:hint="@string/reg_box_plz_hint"
                     android:singleLine="true" />
 
                 <EditText
                     android:id="@+id/reg_box_city"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dip"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.75"
+                    android:layout_weight="0.5"
                     android:hint="@string/reg_box_city_hint"
                     android:singleLine="true" />
-            </TableRow>
-        </TableLayout>
+            </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -160,7 +174,7 @@
             style="@style/myOwnTextFieldStyle"
             android:id="@+id/reg_symptoms_text"
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_weight="0.9"
             android:text="@string/reg_symptoms_label" >
         </TextView>
@@ -168,9 +182,11 @@
         <ImageButton
             android:id="@+id/reg_add_symptoms_button"
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_weight="0.1"
-            android:src="@drawable/plus_24" />
+            android:src="@drawable/plus_24"
+            android:background="@color/special_green"
+            android:contentDescription="@string/addsymptomscd"/>
     </LinearLayout>
 
     <ListView
@@ -188,7 +204,7 @@
             style="@style/myOwnTextFieldStyle"
             android:id="@+id/reg_medicine_text"
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_weight="0.9"
             android:text="@string/reg_medicine_label" >
         </TextView>
@@ -196,9 +212,11 @@
         <ImageButton
             android:id="@+id/reg_add_medicine_button"
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="24dp"
             android:layout_weight="0.1"
-            android:src="@drawable/plus_24" />
+            android:src="@drawable/plus_24"
+            android:background="@color/special_green" 
+            android:contentDescription="@string/addmedicinecd"/>
     </LinearLayout>
 
     <ListView
@@ -233,6 +251,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/reg_reg_label" />
-    </LinearLayout>
-<!--     </ScrollView> -->
 </LinearLayout>

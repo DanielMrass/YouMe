@@ -7,7 +7,6 @@ import com.example.UIMenuFragments.ProfileSoulmateScreensMenuFragment;
 import com.example.youapp.R;
 
 import android.app.Fragment;
-import android.app.AppOpsManager.OnOpChangedListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;

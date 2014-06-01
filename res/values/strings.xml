@@ -34,9 +34,9 @@
         <item>Finland</item>
     </string-array>
 	
-	<string name="reg_symptoms_label">Symptome</string>
+	<string name="reg_symptoms_label">Symptoms</string>
 	<string name="reg_box_symptoms_hint">Click "+" to add</string>
-	<string name="reg_medicine_label">Medicine</string>
+	<string name="reg_medicine_label">Medication</string>
 	<string name="reg_box_medicine_hint">Click "+" to add</string>
 	<string name="reg_nickname_label">Nickname</string>
 	<string name="reg_box_nickname_hint">Nickname</string>
@@ -67,7 +67,7 @@
 	<string name="conf_thx4reg">Thank you for your registration!</string>
 	<string name="conf_plsConf">Please confirm your e-mail address.</string>
 	<string name="conf_b2login"><a href="https://www.youtube.com/watch?v=jxVcgDMBU94"> Back to Login </a></string>
-	<string name="conf_logoGross">Großes Logo</string>
+	<string name="conf_logoGross">Big Logo</string>
 	<string name="conf_profile_label">Confirmation Screen</string>
 	<string name="chat_message_label_text">Messages</string>
 	<string name="qa_toggle_postquestion_text">Post Questions</string>
@@ -88,5 +88,13 @@
 	<string name="answerquestion_rating_label">Importance</string>
 	<string name="answerquestion_rating_low">Low</string>
 	<string name="answerquestion_rating_high">High</string>
-	<string name="answerquestions_my_answers_label">My Answers</string>	
+	<string name="answerquestions_my_answers_label">My Answers</string>
+	<string name="addsymptomscd">Button to add symptoms.</string>
+	<string name="addmedicinecd">Button to add medication</string>
+	<string name="removeanswerfromlist">removeAnswerFromList</string>
+	<string name="medication_delete">Medication delete</string>
+	<string name="exlist_prof_child">Child of ExpandableList for profile</string>
+	<string name="symptom_delete">Symptom delete</string>
+	<string name="remove_mate">delete Soulmate</string>
+	<string name="deletemedicine">deleteMedicine</string>	
 </resources>

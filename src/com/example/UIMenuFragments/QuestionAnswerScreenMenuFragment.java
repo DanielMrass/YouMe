@@ -2,19 +2,14 @@ package com.example.UIMenuFragments;
 
 import com.example.UIContentFragments.AnswerQuestionsContentScreenFragment;
 import com.example.UIContentFragments.PostQuestionsContentScreenFragment;
-import com.example.UIContentFragments.ProfileContentScreenFragment;
-import com.example.UIContentFragments.SoulmateContentScreenFragment;
 import com.example.youapp.R;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ToggleButton;
 

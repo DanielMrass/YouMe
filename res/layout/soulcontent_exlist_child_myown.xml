@@ -21,7 +21,7 @@
          android:layout_width="0dip"
          android:layout_weight="0.1"
          android:src="@drawable/delete_icon_21"
-        />
+        android:contentDescription="@string/remove_mate"/>
 	</LinearLayout>
     <LinearLayout
         android:id="@+id/soulcontent_exlist_child_navlayout"

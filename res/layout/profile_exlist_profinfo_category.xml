@@ -19,5 +19,5 @@
         android:src="@drawable/plus_24"
         android:background="@color/special_green"
         android:focusable="false"
-	    />
+	    android:contentDescription="@string/exlist_prof_child"/>
 </LinearLayout>

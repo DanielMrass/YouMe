@@ -5,10 +5,9 @@ import com.example.CallbackInterfaces.PostQuestionCallback;
 import com.example.youapp.R;
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -31,22 +30,11 @@ public class PostQuestionsOptionsAdapter extends ArrayAdapter<String> {
 		
 		final EditText et = (EditText) convertView.findViewById(R.id.postquestion_option_text);
 		et.setText(getItem(position));
-		et.addTextChangedListener(new TextWatcher() {
+		et.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
 			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-			}
-			
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-			}
-			
-			@Override
-			public void afterTextChanged(Editable s) {
-				if(s!=null&&et.hasFocus()){
-					pqc.updateListData(position, s);
-				}
+			public void onFocusChange(View v, boolean hasFocus) {
+				pqc.updateListData(position, et.getText());
 			}
 		});
 		return convertView;

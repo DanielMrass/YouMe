@@ -19,18 +19,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class AnswerQuestionsContentScreenFragment extends Fragment implements OnClickListener, OnItemSelectedListener, OnSeekBarChangeListener, MyAnswerCallback{
@@ -40,7 +37,6 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 	private Button okButton;
 	private Button skipButton;
 	private SeekBar importanceRating;
-	private TextView answersListLabel;
 	private ArrayList<AnsweredQuestion> myAnsweredQuestionsList = new ArrayList<AnsweredQuestion>();
 	private MyAnswersListAdapter myAnswersAdapter;
 	
@@ -72,21 +68,17 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 		importanceRating = (SeekBar) rootView.findViewById(R.id.answerquestion_rating_bar);
 		importanceRating.setOnSeekBarChangeListener(this);
 		
-//		okButton = (Button) rootView.findViewById(R.id.answerquestion_ok_button);
-//		okButton.setOnClickListener(this);
-//		
-//		skipButton = (Button) rootView.findViewById(R.id.answerquestion_skip_button);
-//		skipButton.setOnClickListener(this);
+		okButton = (Button) rootView.findViewById(R.id.answerquestion_ok_button);
+		okButton.setOnClickListener(this);
 		
-		answersListLabel = (TextView) rootView.findViewById(R.id.answerquestions_my_answers_label);
-		answersListLabel.setOnClickListener(this);
+		skipButton = (Button) rootView.findViewById(R.id.answerquestion_skip_button);
+		skipButton.setOnClickListener(this);
 		
-		ListView myAnswersList = (ListView) rootView.findViewById(R.id.answerquestions_my_answers_list);
-		myAnswersAdapter = new MyAnswersListAdapter(getActivity());
+		ExpandableListView myAnswersList = (ExpandableListView) rootView.findViewById(R.id.answerquestions_my_answers_list);
 		createDummyAnsweredQuestions();
-		myAnswersAdapter.addAll(myAnsweredQuestionsList);
-		myAnswersList.setAdapter(myAnswersAdapter);
+		myAnswersAdapter = new MyAnswersListAdapter(getActivity(), "My Answers", myAnsweredQuestionsList);
 		myAnswersAdapter.setMyAnswerCallback(this);
+		myAnswersList.setAdapter(myAnswersAdapter);
 		
 		return rootView;
 	}
@@ -177,11 +169,8 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 
 	@Override
 	public void onClick(View v) {
-		switch(v.getId()){
-		case R.id.answerquestions_my_answers_label:
-			//TODO Liste sichtbar machen
-			break;
-		}
+//		switch(v.getId()){
+//		}
 	}
 
 	//OnItemSelectedListener
@@ -225,7 +214,7 @@ public class AnswerQuestionsContentScreenFragment extends Fragment implements On
 
 	@Override
 	public void deleteAnsweredQuestionFromList(int position) {
-		myAnswersAdapter.remove(myAnsweredQuestionsList.get(position));
 		myAnsweredQuestionsList.remove(position);
+		myAnswersAdapter.updateListData(myAnsweredQuestionsList);
 	}
 }

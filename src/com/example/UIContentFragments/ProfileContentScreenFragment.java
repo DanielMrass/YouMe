@@ -1,8 +1,6 @@
 package com.example.UIContentFragments;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import com.example.Adapters.ProfileListAdapter;
 import com.example.Adapters.ProfileMedicationAdapter;
@@ -21,8 +19,6 @@ import android.widget.ExpandableListView;
 
 public class ProfileContentScreenFragment extends Fragment implements MedicineCallBack, SymptomCallBack, ProfileCallBack  {
 	
-	private List<String> categories = new ArrayList<String>();
-	private HashMap<String, List<Object>> childData = new HashMap<String, List<Object>>();
 	
 	private ArrayList<String> medication = new ArrayList<String>();
 	private ProfileMedicationAdapter medicationAdapter;
@@ -78,40 +74,6 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 			medication.add("More Coffee");
 			medication.add("...");
 		}
-
-	private void createDummyData() {
-		//add the Categories
-		categories.add("My Profile");
-		categories.add("Symptoms");
-		categories.add("Medication");
-		
-		
-		//create profile Information
-		List<Object> profiles = new ArrayList<Object>();
-		List<Object> profile = new ArrayList<Object>();
-		profile.add("Daniel Mraﬂ, Age: 25");
-		profile.add("Sankt Augustin, Germany");
-		profile.add("daniel.mrass@gmail.com (not visible)");
-		profiles.add(profile);
-		
-		//create symptoms iInformation
-		List<Object> symptom = new ArrayList<Object>();
-		symptom.add("smartness");
-		symptom.add("good look");
-		symptom.add("clear speech");
-		
-		
-		//create medication information
-		List<Object> medication = new ArrayList<Object>();
-		medication.add("Coffee");
-		medication.add("More Coffee");
-		medication.add("...");
-		
-		//add the categories and data to the map
-		childData.put(categories.get(0), profiles);
-		childData.put(categories.get(1), symptom);
-		childData.put(categories.get(2), medication);
-	}
 
 	@Override
 	public void deleteMedicineFromList(int position) {

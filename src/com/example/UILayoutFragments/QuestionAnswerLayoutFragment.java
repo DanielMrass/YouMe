@@ -2,9 +2,7 @@ package com.example.UILayoutFragments;
 
 import com.example.UIContentFragments.AnswerQuestionsContentScreenFragment;
 import com.example.UIContentFragments.ChatScreenContentFragment;
-import com.example.UIContentFragments.ProfileContentScreenFragment;
 import com.example.UIMenuFragments.FooterFragment;
-import com.example.UIMenuFragments.ProfileSoulmateScreensMenuFragment;
 import com.example.UIMenuFragments.QuestionAnswerScreenMenuFragment;
 import com.example.youapp.R;
 

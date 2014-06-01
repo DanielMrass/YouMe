@@ -4,24 +4,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <TextView
-        android:id="@+id/answersListItem_question"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        />
+   
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" 
         >
-	<TextView
-        android:id="@+id/answersListItem_answer"
+         <TextView
+        android:id="@+id/postAnswersListItem_question"
         android:layout_width="0dip"
         android:layout_weight="0.9"
         android:layout_height="wrap_content" 
         />
+	
 	<ImageButton
-	    android:id="@+id/answersListItem_delete_answer"
+	    android:id="@+id/postAnswersListItem_delete_answer"
 	    android:layout_width="0dip"
 	    android:layout_weight="0.1"
 	    android:layout_height="wrap_content"
@@ -29,4 +26,9 @@
 	    android:contentDescription="@string/removeanswerfromlist"
 	    />
 	</LinearLayout>
+	<TextView
+        android:id="@+id/postAnswersListItem_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        />
 </LinearLayout>

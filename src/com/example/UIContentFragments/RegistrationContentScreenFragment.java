@@ -53,8 +53,9 @@ public class RegistrationContentScreenFragment extends Fragment implements OnIte
 		
 		getActivity().getActionBar().setTitle("Registration");
 		
-		rootView = inflater.inflate(R.layout.f_registration, container,
-				false);
+//		rootView = inflater.inflate(R.layout.f_registration, container,
+//				false);
+		rootView = inflater.inflate(R.layout.f_registration, container, false);
 		
 		birthday_text_box = (EditText) rootView.findViewById(R.id.reg_box_birthday);
 		birthday_text_box.setOnFocusChangeListener(this);
