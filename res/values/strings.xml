@@ -96,5 +96,11 @@
 	<string name="exlist_prof_child">Child of ExpandableList for profile</string>
 	<string name="symptom_delete">Symptom delete</string>
 	<string name="remove_mate">delete Soulmate</string>
-	<string name="deletemedicine">deleteMedicine</string>	
+	<string name="deletemedicine">deleteMedicine</string>
+	<string name="editprofile_name">Name: </string>
+	<string name="editprofile_origin">Origin: </string>
+	<string name="editprofile_gender">Gender: </string>
+	<string name="editprofile_birthday">Birthday:</string>
+	<string name="editprofile_mail">E-Mail: </string>
+	<string name="editprofile_mailVisible">E-Mail visible: </string>
 </resources>

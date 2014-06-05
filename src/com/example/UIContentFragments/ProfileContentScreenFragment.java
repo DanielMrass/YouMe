@@ -1,6 +1,7 @@
 package com.example.UIContentFragments;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.example.Adapters.ProfileListAdapter;
 import com.example.Adapters.ProfileMedicationAdapter;
@@ -10,8 +11,11 @@ import com.example.CallbackInterfaces.ProfileCallBack;
 import com.example.CallbackInterfaces.SymptomCallBack;
 import com.example.youapp.R;
 
+import UIDialogFragments.EditProfileFragment;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +30,8 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 	private ArrayList<String> symptoms = new ArrayList<String>();
 	private ProfileSymptomsAdapter symptomsAdapter;
 	
-	private ArrayList<String> profileData = new ArrayList<String>();
+	private HashMap<String, String> profileDataSorted = new HashMap<String, String>();
+	private ArrayList<String> profileDataForAdapter = new ArrayList<String>();
 	private ProfileListAdapter profileAdapter;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,8 +41,9 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 		View rootView = inflater.inflate(R.layout.f_profile_content, container, false);
 		
 		ExpandableListView profile = (ExpandableListView) rootView.findViewById(R.id.profile_exlist);
+		//TODO get HashMap with data from Parser
 		createDummyProfile();
-		profileAdapter = new ProfileListAdapter(getActivity(), "My Profile", profileData);
+		profileAdapter = new ProfileListAdapter(getActivity(), "My Profile", profileDataForAdapter);
 		profileAdapter.setProfCallback(this);
 		profile.setAdapter(profileAdapter);
 		
@@ -57,9 +63,13 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 	}
 
 	private void createDummyProfile() {
-		profileData.add("Mr. X");
-		profileData.add("Unknown");
-		profileData.add("London");
+		profileDataSorted.put("name", "Mr.X");
+		profileDataSorted.put("origin", "London/England");
+		profileDataSorted.put("gender", "male");
+		profileDataSorted.put("birthday", "11-11-1995");
+		profileDataSorted.put("mail", "mrx@gangsters-london.uk");
+		profileDataSorted.put("mailVisible", "false");
+		updateArrayList();		
 	}
 
 	private void createDummySymptoms() {
@@ -100,8 +110,33 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 	}
 
 	@Override
-	public void updateProfile(ArrayList<String> data) {
-		this.profileData = data;
-		profileAdapter.updateProfileData(profileData);
+	public void updateProfile(HashMap<String, String> data) {
+		this.profileDataSorted = data;
+		updateArrayList();
+		profileAdapter.updateProfileData(profileDataForAdapter);
+	}
+
+	private void updateArrayList() {
+		profileDataForAdapter.clear();
+		profileDataForAdapter.add(profileDataSorted.get("name") + ", " + profileDataSorted.get("origin"));
+		profileDataForAdapter.add(profileDataSorted.get("gender") + ", " + profileDataSorted.get("birthday"));
+		if(profileDataSorted.get("mailVisible").equalsIgnoreCase("false")){
+			profileDataForAdapter.add(profileDataSorted.get("mail")+ "(not visible)");
+		}
+		else {
+			profileDataForAdapter.add(profileDataSorted.get("mail")+ "(visible)");
+		}
+	}
+
+	@Override
+	public void initiateEditDialog() {
+		// TODO createTheDialog
+		Bundle bundle = new Bundle();
+		Log.i("PROFILECONTENT", profileDataSorted.toString());
+		bundle.putSerializable("profileMap", profileDataSorted);
+		DialogFragment frag = new EditProfileFragment();
+		frag.setArguments(bundle);
+		frag.show(getFragmentManager(), "editProfile");
+		((EditProfileFragment)frag).setProfCall(this);
 	}
 }

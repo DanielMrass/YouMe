@@ -103,7 +103,7 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				//TODO Edit-DialogFragment for Profile
-				
+				profCall.initiateEditDialog();
 			}
 		});
 		return convertView;
@@ -128,3 +128,4 @@ public class ProfileListAdapter extends BaseExpandableListAdapter {
 		this.profCall = profCall;
 	}
 }
+

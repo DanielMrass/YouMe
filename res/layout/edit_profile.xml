@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" 
+      >
+     <LinearLayout 
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical" 
+      >
+    <!-- Name -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_name_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_name"
+	        />
+	    <EditText
+	         android:id="@+id/editprofile_name_etext"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	         android:inputType="text"
+	         android:singleLine="true"
+	        />
+	</LinearLayout>
+	
+	<!-- 	Origin	 -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_origin_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_origin"
+	        />
+	    <Spinner
+	         android:id="@+id/editprofile_origin_spinner"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	        />
+	</LinearLayout>
+	
+	<!-- 	gender -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_gender_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_gender"
+	        />
+	    <RadioGroup
+	        android:id="@+id/editprofile_gender_radio"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	        >
+	        </RadioGroup>
+	</LinearLayout>
+	
+	<!-- 	birthday	 -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_birthday_label"
+	         android:layout_width="match_parent"
+	         android:layout_weight="0.1"
+	         android:layout_height="0dip"
+	         android:text="@string/editprofile_birthday"
+	        />
+	    <DatePicker
+	         android:id="@+id/editprofile_birthday_picker"
+	         android:layout_width="match_parent"
+	         android:layout_weight="0.9"
+	         android:layout_height="0dip"
+	        />
+	</LinearLayout>
+	
+	<!-- 	Mail	 -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_mail_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_mail"
+	        />
+	    <EditText
+	         android:id="@+id/editprofile_mail_extext"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	         android:singleLine="true"
+	         android:inputType="text"
+	        />
+	</LinearLayout>
+	
+	<!-- Mail Visible -->
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_mailVisible_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_mailVisible"
+	        />
+	    <RadioGroup
+	        android:id="@+id/editprofile_mailVisible_radio"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	        >
+	        </RadioGroup>
+	</LinearLayout>	
+	</LinearLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,7 +1,8 @@
 package com.example.CallbackInterfaces;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public interface ProfileCallBack {
-	void updateProfile(ArrayList<String> data);
+	void updateProfile(HashMap<String, String> data);
+	void initiateEditDialog();
 }
