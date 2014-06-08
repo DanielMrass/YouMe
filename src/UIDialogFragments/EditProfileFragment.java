@@ -62,7 +62,6 @@ public class EditProfileFragment extends DialogFragment {
 		}else {
 			EditProfileFragment.this.getDialog().cancel();
 		}
-		//TODO Views instantiieren.
 		
 		name = (EditText) rootView.findViewById(R.id.editprofile_name_etext);
 		name.setText(data.get("name"));

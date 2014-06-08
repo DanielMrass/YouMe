@@ -1,9 +1,16 @@
 package com.example.youapp;
 
+import java.util.concurrent.ExecutionException;
+
+import org.json.JSONObject;
+
+import com.example.AsyncTasks.GetRequestTask;
+import com.example.JSONParser.JSONParser;
 import com.example.UIContentFragments.LoginContentScreenFragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -26,6 +33,18 @@ public class MainActivity extends Activity {
 					.replace(R.id.container, frag).addToBackStack("login").commit();
 		}
 		
+		GetRequestTask task = (GetRequestTask) new GetRequestTask().execute("https://app.dev.galaxyadvisors.com/YouApp/rest/persons/index.html?personId=2");
+		JSONObject result;
+		try {
+			result = task.get();
+			Log.i("RESULT", result.toString());
+			JSONParser parser = new JSONParser();
+			parser.parseJSON(result);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		//RegistrationScreenFragment
 //		if (savedInstanceState == null) {
 //			getFragmentManager().beginTransaction()
