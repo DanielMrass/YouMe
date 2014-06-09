@@ -60,7 +60,7 @@
         android:layout_height="0dip"
         android:layout_weight="0.4" 
 	    >
-		<Button
+		<com.facebook.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

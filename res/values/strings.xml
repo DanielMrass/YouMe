@@ -103,4 +103,5 @@
 	<string name="editprofile_birthday">Birthday:</string>
 	<string name="editprofile_mail">E-Mail: </string>
 	<string name="editprofile_mailVisible">E-Mail visible: </string>
+	<string name="app_id">157796167619145</string>
 </resources>
