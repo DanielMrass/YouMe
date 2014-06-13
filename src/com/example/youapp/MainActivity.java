@@ -10,11 +10,12 @@ import com.example.UIContentFragments.LoginContentScreenFragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.*;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends Activity {
 			args.putBoolean("isRegistered", false);
 			frag.setArguments(args);
 			
-			getFragmentManager().beginTransaction()
+			getSupportFragmentManager().beginTransaction()
 					.replace(R.id.container, frag).addToBackStack("login").commit();
 		}
 		

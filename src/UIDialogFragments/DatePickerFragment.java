@@ -8,10 +8,11 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
-import android.app.DialogFragment;
+//import android.app.DialogFragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.DatePicker;
+import android.support.v4.app.*;
 
 @SuppressLint("SimpleDateFormat")
 public class DatePickerFragment extends DialogFragment implements OnDateSetListener {

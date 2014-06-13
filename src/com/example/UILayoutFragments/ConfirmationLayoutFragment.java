@@ -4,7 +4,7 @@ import com.example.UIContentFragments.ConfirmationContentScreenFragment;
 import com.example.UIMenuFragments.FooterFragment;
 import com.example.youapp.R;
 
-import android.app.Fragment;
+import android.support.v4.app.*;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

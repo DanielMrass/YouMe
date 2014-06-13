@@ -3,8 +3,9 @@ package com.example.UIContentFragments;
 import com.example.UILayoutFragments.ProfileSoulmatesLayoutFragment;
 import com.example.youapp.R;
 
-import android.app.Fragment;
+//import android.support.v4.app.*;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +27,9 @@ import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.Settings;
 import com.facebook.widget.LoginButton;
+
+
+import android.support.v4.app.*;
 
 
 public class LoginContentScreenFragment extends Fragment implements OnClickListener {
@@ -69,6 +73,7 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
             loginButton.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) { onClickLogout(); }
             });
+
         } else {
             loginButton.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) { onClickLogin(); }
@@ -96,7 +101,11 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
         @Override
         public void call(Session session, SessionState state, Exception exception) {
             updateView();
+            getFragmentManager().popBackStack();
+			getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesLayoutFragment()).commit();
         }
+        
+        
     }
 
     
@@ -121,7 +130,7 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
 				false);
 		loginButton = (LoginButton) rootView.findViewById(R.id.login_button);
 		loginButton.setOnClickListener(this);
-
+		loginButton.setFragment(this);
         Settings.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
 
         Session session = Session.getActiveSession();
@@ -137,7 +146,7 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
                 session.openForRead(new Session.OpenRequest(getActivity()).setCallback(statusCallback));
             }
         }
-
+        
         updateView();
 		
 		return rootView;
@@ -150,7 +159,7 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
 
 	@Override
 	public void onClick(View v) {
-		switch(v.getId()){
+		/*switch(v.getId()){
 		case R.id.login_button:
 			if(isRegistered){
 				getFragmentManager().popBackStack();
@@ -160,6 +169,6 @@ public class LoginContentScreenFragment extends Fragment implements OnClickListe
 				getFragmentManager().beginTransaction().replace(R.id.container, new RegistrationContentScreenFragment(), "registrationFragment").commit();
 			}
 			break;
-		}
+		}*/
 	}
 }

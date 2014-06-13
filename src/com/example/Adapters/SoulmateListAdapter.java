@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.app.*;
 
 public class SoulmateListAdapter extends BaseExpandableListAdapter {
 
@@ -35,11 +36,11 @@ public class SoulmateListAdapter extends BaseExpandableListAdapter {
 	private List<String> categories; 
 	//Hier stehen zu den Kategorien zugeordnet die Daten drin, also Nutzer?
 	private HashMap<String, List<Soulmates>> childData;
-	private Activity activity;
+	private FragmentActivity activity;
 	
 	private SoulmateCallback soulCall;
 	
-	public SoulmateListAdapter(Activity act, List<String> cats, HashMap<String, List<Soulmates>> data){
+	public SoulmateListAdapter(FragmentActivity act, List<String> cats, HashMap<String, List<Soulmates>> data){
 		this.activity = act;
 		this.categories = cats;
 		this.childData = data;
@@ -95,7 +96,7 @@ public class SoulmateListAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				//TODO Load other persons profile fragment -> new fragment?
-				activity.getFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesLayoutFragment()).commit();
+				activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, new ProfileSoulmatesLayoutFragment()).commit();
 				Toast.makeText(activity, "This should be " + ((Button)v).getText() + "s Profile", Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -107,7 +108,7 @@ public class SoulmateListAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				// TODO Set the field for the addressat from here
-				activity.getFragmentManager().beginTransaction().replace(R.id.container, new ChatScreenContentFragment()).commit();
+				activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, new ChatScreenContentFragment()).commit();
 				Toast.makeText(activity, "Came here through " + ((Button)v).getText(), Toast.LENGTH_SHORT).show();
 			}
 		});

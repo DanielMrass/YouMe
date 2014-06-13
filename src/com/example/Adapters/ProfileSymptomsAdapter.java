@@ -7,8 +7,9 @@ import com.example.youapp.R;
 
 import UIDialogFragments.AddSymptomFragment;
 import android.app.Activity;
-import android.app.DialogFragment;
+//import android.app.DialogFragment;
 import android.content.Context;
+import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,10 +29,10 @@ public class ProfileSymptomsAdapter extends BaseExpandableListAdapter {
 	//contains Data regarding to the childs -> Profile Information,
 	private ArrayList<String> symptoms;
 	private SymptomCallBack sympCall;
-	private Activity activity;
+	private FragmentActivity activity;
 	
 	
-	public ProfileSymptomsAdapter(Activity act, String cat, ArrayList<String> data){
+	public ProfileSymptomsAdapter(FragmentActivity act, String cat, ArrayList<String> data){
 		this.activity = act;
 		this.category = cat;
 		this.symptoms = data;
@@ -109,7 +110,7 @@ public class ProfileSymptomsAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				DialogFragment df = new AddSymptomFragment();
-				df.show(activity.getFragmentManager(), "addSymptom");
+				df.show(activity.getSupportFragmentManager(), "addSymptom");
 				((AddSymptomFragment) df).setSympCall(sympCall);
 			}
 		});

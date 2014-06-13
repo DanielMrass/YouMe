@@ -7,7 +7,7 @@ import com.example.youapp.R;
 
 import UIDialogFragments.AddMedicinesFragment;
 import android.app.Activity;
-import android.app.DialogFragment;
+//import android.app.DialogFragment;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.support.v4.app.*;
 
 public class ProfileMedicationAdapter extends BaseExpandableListAdapter {
 
@@ -28,10 +29,10 @@ public class ProfileMedicationAdapter extends BaseExpandableListAdapter {
 	//contains Data regarding to the childs -> Profile Information,
 	private ArrayList<String> medication;
 	private MedicineCallBack medCall;
-	private Activity activity;
+	private FragmentActivity activity;
 	
 	
-	public ProfileMedicationAdapter(Activity act, String cat, ArrayList<String> data){
+	public ProfileMedicationAdapter(FragmentActivity act, String cat, ArrayList<String> data){
 		this.activity = act;
 		this.category = cat;
 		this.medication = data;
@@ -109,7 +110,7 @@ public class ProfileMedicationAdapter extends BaseExpandableListAdapter {
 			@Override
 			public void onClick(View v) {
 				DialogFragment df = new AddMedicinesFragment();
-				df.show(activity.getFragmentManager(), "addMedicine");
+				df.show(activity.getSupportFragmentManager(), "addMedicine");
 				((AddMedicinesFragment) df).setMedCall(medCall);
 			}
 		});

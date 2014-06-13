@@ -12,8 +12,8 @@ import com.example.CallbackInterfaces.SymptomCallBack;
 import com.example.youapp.R;
 
 import UIDialogFragments.EditProfileFragment;
-import android.app.DialogFragment;
-import android.app.Fragment;
+//import android.app.DialogFragment;
+import android.support.v4.app.*;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +36,7 @@ public class ProfileContentScreenFragment extends Fragment implements MedicineCa
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		
+
 		getActivity().getActionBar().setTitle("Your Profile");
 		View rootView = inflater.inflate(R.layout.f_profile_content, container, false);
 		
