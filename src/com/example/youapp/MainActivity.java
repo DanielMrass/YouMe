@@ -1,5 +1,7 @@
 package com.example.youapp;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
 
 import org.json.JSONObject;
@@ -7,10 +9,16 @@ import org.json.JSONObject;
 import com.example.AsyncTasks.GetRequestTask;
 import com.example.JSONParser.JSONParser;
 import com.example.UIContentFragments.LoginContentScreenFragment;
+import com.facebook.Session;
 
 import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v4.app.*;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +29,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 
 		//LoginScreenFragment
 		if (savedInstanceState == null) {
@@ -72,4 +81,11 @@ public class MainActivity extends FragmentActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	@Override
+	public void onDestroy(){
+		Session session = Session.getActiveSession();
+		session.close();
+	}
+	
 }

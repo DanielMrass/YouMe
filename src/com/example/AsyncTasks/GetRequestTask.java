@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
@@ -40,8 +41,14 @@ public class GetRequestTask extends AsyncTask<String, Integer, JSONObject> {
 
 	@Override
 	protected JSONObject doInBackground(String... params) {
+		
 		String result="";
 		try {
+			SSLContext sc = SSLContext.getInstance("SSL");
+			sc.init(null, trustAllCerts, new java.security.SecureRandom());
+			HttpsURLConnection.setDefaultSSLSocketFactory(sc
+					.getSocketFactory());
+			
 			URL url = new URL(params[0]);
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setDoInput(true);
