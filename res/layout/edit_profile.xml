@@ -19,14 +19,36 @@
 	    android:orientation="horizontal" 
 	    >
 	    <TextView
-	        android:id="@+id/editprofile_name_label"
+	        android:id="@+id/editprofile_lastname_label"
 	         android:layout_width="0dip"
 	         android:layout_weight="0.25"
 	         android:layout_height="wrap_content"
 	         android:text="@string/editprofile_name"
 	        />
 	    <EditText
-	         android:id="@+id/editprofile_name_etext"
+	         android:id="@+id/editprofile_lastname_etext"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.75"
+	         android:layout_height="wrap_content"
+	         android:inputType="text"
+	         android:singleLine="true"
+	        />
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    >
+	    <TextView
+	        android:id="@+id/editprofile_firstname_label"
+	         android:layout_width="0dip"
+	         android:layout_weight="0.25"
+	         android:layout_height="wrap_content"
+	         android:text="@string/editprofile_name"
+	        />
+	    <EditText
+	         android:id="@+id/editprofile_firstname_etext"
 	         android:layout_width="0dip"
 	         android:layout_weight="0.75"
 	         android:layout_height="wrap_content"

@@ -34,7 +34,8 @@ import android.support.v4.app.*;
 public class EditProfileFragment extends DialogFragment {
 	
 	private ProfileCallBack profCall;
-	private EditText name;
+	private EditText lastName;
+	private EditText firstName;
 	private Spinner origin;
 	private RadioGroup gender;
 	private DatePicker birthday;
@@ -65,8 +66,11 @@ public class EditProfileFragment extends DialogFragment {
 			EditProfileFragment.this.getDialog().cancel();
 		}
 		
-		name = (EditText) rootView.findViewById(R.id.editprofile_name_etext);
-		name.setText(data.get("name"));
+		lastName = (EditText) rootView.findViewById(R.id.editprofile_lastname_etext);
+		lastName.setText(data.get("lastName"));
+		
+		firstName = (EditText) rootView.findViewById(R.id.editprofile_firstname_etext);
+		firstName.setText(data.get("firstName"));
 		
 		origin = (Spinner) rootView.findViewById(R.id.editprofile_origin_spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -82,14 +86,14 @@ public class EditProfileFragment extends DialogFragment {
 		female.setText("female");
 		gender.addView(male);
 		gender.addView(female);
-		if(data.get("gender").equalsIgnoreCase("male")){
+		if(data.get("gender").equalsIgnoreCase("M")){
 			gender.check(male.getId());
 		}else{
 			gender.check(female.getId());
 		}
 		
 		birthday = (DatePicker) rootView.findViewById(R.id.editprofile_birthday_picker);
-		sdf = new SimpleDateFormat("dd-MM-yyyy");
+		sdf = new SimpleDateFormat("MMM dd, yyyy");
 		try {
 			birthdayDate = sdf.parse(data.get("birthday"));
 		} catch (ParseException e) {
@@ -110,24 +114,24 @@ public class EditProfileFragment extends DialogFragment {
 		});
         birthday.setCalendarViewShown(false);
 		
-		mailAddy = (EditText) rootView.findViewById(R.id.editprofile_mail_extext);
-		mailAddy.setText(data.get("mail"));
-		
-		mailVisible = (RadioGroup) rootView.findViewById(R.id.editprofile_mailVisible_radio);
-		visible = new RadioButton(getActivity());
-		visible.setText("Yes");
-		invisible = new RadioButton(getActivity());
-		invisible.setText("No");
-		mailVisible.addView(visible);
-		mailVisible.addView(invisible);
-		if(data.get("mailVisible").equalsIgnoreCase("true")){
-			mailVisible.check(visible.getId());
-		}else{
-			mailVisible.check(invisible.getId());
-		}
+//		mailAddy = (EditText) rootView.findViewById(R.id.editprofile_mail_extext);
+//		mailAddy.setText(data.get("mail"));
+//		
+//		mailVisible = (RadioGroup) rootView.findViewById(R.id.editprofile_mailVisible_radio);
+//		visible = new RadioButton(getActivity());
+//		visible.setText("Yes");
+//		invisible = new RadioButton(getActivity());
+//		invisible.setText("No");
+//		mailVisible.addView(visible);
+//		mailVisible.addView(invisible);
+//		if(data.get("mailVisible").equalsIgnoreCase("true")){
+//			mailVisible.check(visible.getId());
+//		}else{
+//			mailVisible.check(invisible.getId());
+//		}
 		
 		builder.setView(rootView);
-		builder.setTitle("Add Symptom:");
+		builder.setTitle("Edit Profile:");
 		builder.setPositiveButton("OK", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -147,22 +151,23 @@ public class EditProfileFragment extends DialogFragment {
 	
 	protected void updateData() {
 		data.clear();
-		data.put("name", name.getText().toString());
+		data.put("lastName", lastName.getText().toString());
+		data.put("firstName", firstName.getText().toString());
 		data.put("origin", (String)origin.getSelectedItem());
 		if(gender.getCheckedRadioButtonId() == male.getId()){
-			data.put("gender", "male");
+			data.put("gender", "M");
 		}
 		else {
-			data.put("gender", "female");
+			data.put("gender", "F");
 		}
 		data.put("birthday", sdf.format(birthdayDate));
-		data.put("mail", mailAddy.getText().toString());
-		if(mailVisible.getCheckedRadioButtonId() == visible.getId()){
-			data.put("mailVisible", "true");
-		}
-		else {
-			data.put("mailVisible", "false");
-		}
+//		data.put("mail", mailAddy.getText().toString());
+//		if(mailVisible.getCheckedRadioButtonId() == visible.getId()){
+//			data.put("mailVisible", "true");
+//		}
+//		else {
+//			data.put("mailVisible", "false");
+//		}
 		Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
 	}
 

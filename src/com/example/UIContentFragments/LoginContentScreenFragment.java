@@ -24,6 +24,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import com.facebook.Request;
 import com.facebook.Response;
@@ -38,6 +39,8 @@ import android.support.v4.app.*;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+
+import android.preference.PreferenceManager;
 
 public class LoginContentScreenFragment extends Fragment implements
 		OnClickListener {
@@ -71,6 +74,10 @@ public class LoginContentScreenFragment extends Fragment implements
 						final Response response) {
 					Log.i("ISREGISTERED", "" + isRegistered(user.getId()));
 					if (user != null && isRegistered(user.getId())) {
+						SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
+						SharedPreferences.Editor editor = settings.edit();
+						Log.i("PERSONID", getPersonId(user.getId()));
+						editor.putString("personId", getPersonId(user.getId())).commit();
 						getFragmentManager()
 								.beginTransaction()
 								.replace(R.id.container,
@@ -112,6 +119,22 @@ public class LoginContentScreenFragment extends Fragment implements
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
+		}
+	}
+	
+	private String getPersonId(String facebookId){
+		GetRequestTask task = (GetRequestTask) new GetRequestTask()
+		.execute("https://app.dev.galaxyadvisors.com/YouApp/rest/persons/getid.html?fbId=" + facebookId);
+		try {
+			return task.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
 		}
 	}
 

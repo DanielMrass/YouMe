@@ -42,24 +42,6 @@ public class MainActivity extends FragmentActivity {
 			getSupportFragmentManager().beginTransaction()
 					.replace(R.id.container, frag).addToBackStack("login").commit();
 		}
-		
-		GetRequestTask task = (GetRequestTask) new GetRequestTask().execute("https://app.dev.galaxyadvisors.com/YouApp/rest/persons/index.html?personId=2");
-		JSONObject result;
-		try {
-			result = task.get();
-			Log.i("RESULT", result.toString());
-			JSONParser parser = new JSONParser();
-			parser.parseJSON(result);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		//RegistrationScreenFragment
-//		if (savedInstanceState == null) {
-//			getFragmentManager().beginTransaction()
-//					.add(R.id.container, new RegistrationScreenFragment()).commit();
-//		}
 	}
 
 	@Override
@@ -84,6 +66,7 @@ public class MainActivity extends FragmentActivity {
 	
 	@Override
 	public void onDestroy(){
+		super.onDestroy();
 		Session session = Session.getActiveSession();
 		session.close();
 	}
